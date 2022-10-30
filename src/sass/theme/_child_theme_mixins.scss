@@ -1,0 +1,75 @@
+//Mixins allow you to define styles that can be re-used throughout your stylesheet.
+
+ /// Description Selector that matches the outer selector and an element selector.
+ /// @see https://sass-lang.com/documentation/style-rules/parent-selector#adding-suffixes
+@mixin unify-parent($child) {
+    @at-root #{selector.unify(&, $child)} {
+      @content;
+    }
+}
+
+/// Description Mixin that adds the underline animation to any element assigned to it.
+/// @parameter {String} $type [fade] - Choose between the animation options you want
+/// @parameter {String} $dir [null] - The direction of the effect
+/// @parameter {Value} $weight [2px] - The size of the line
+/// @parameter {Color Value} $color [#000] - the color of the line
+/// 
+/// @see https://codepen.io/gergab00/pen/bGMvNYd
+@mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: #000) {
+    @if $dir == null {
+      @if $type == fade {
+        $dir: 'top';
+      } @else if $type == slide {
+        $dir: 'center';
+      }
+    }
+  
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    &::after {
+      position: absolute;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: $weight;
+      background: $color;
+      @if $type == fade {
+        transition: .3s;
+        opacity: 0;
+        visibility: hidden;
+        @if $dir == bottom {
+          bottom: $weight * -4;
+        } @else {
+          bottom: $weight;
+        }
+      } @else if $type == slide {
+        bottom: $weight * -2;
+        transform: scale(0, 1);
+        transition: transform .3s;
+        @if $dir == left-right or $dir == right-in-left {
+          transform-origin: left top;
+        } @else if $dir == right-left or $dir == left-in-right {
+          transform-origin: right top;
+        } @else {
+          transform-origin: center top;
+        }
+      }
+    }
+    &:hover::after {
+      @if $type == fade {
+        bottom: $weight * -2;
+        opacity: 1;
+        visibility: visible;
+      } @else if $type == slide {
+        @if $dir == left-in-right {
+          transform-origin: left top;
+        } @else if $dir == right-in-left {
+          transform-origin: right top;
+        }
+        transform: scale(1, 1);
+      }
+    }
+  }
+
+  

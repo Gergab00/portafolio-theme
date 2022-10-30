@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: watch",
+			"detail": "npm-run-all --parallel watch-run-*"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "blocks",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - blocks",
+			"detail": "wp-scripts build"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "blocks",
+			"problemMatcher": [],
+			"label": "npm: start - blocks",
+			"detail": "wp-scripts start"
+		},
+		{
+			"type": "npm",
+			"script": "css",
+			"problemMatcher": [],
+			"label": "npm: css",
+			"detail": "npm-run-all css-compile css-postcss css-minify",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "npm",
+			"script": "compile",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: compile",
+			"detail": "npm-run-all css-compile css-postcss css-minify js-compile js-minify wp-scripts build"
+		}
+	]
+}

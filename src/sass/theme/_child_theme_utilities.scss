@@ -1,0 +1,17 @@
+// New utilities can be added in here
+// @see https://getbootstrap.com/docs/5.2/utilities/api/#using-the-api
+
+$utilities: (
+    "font-family": (
+        property: font-family,
+        class: font,
+        values: ($fonts-family)
+      ),    
+      "font-size": (
+        rfs: true,
+        property: font-size,
+        responsive: true,
+        class: fs,
+        values: $font-sizes
+      ),
+);

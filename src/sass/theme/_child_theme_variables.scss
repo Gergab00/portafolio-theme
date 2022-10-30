@@ -1,0 +1,54 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+// ^ Esconde en Telefonos d-none d-md-block
+// ^ Esconde solamente en Tablet d-sm-block d-md-none d-lg-block
+// ^ Muestra solo en pantallas d-none d-md-none d-lg-block d-xl-block d-xxl-block
+// ^ Esconde en pantallas d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none
+
+//Your custom colors
+$custom-color: #ffff;
+
+// scss-docs-start custom-colors-map
+$custom-colors: (
+    "custom-color": $custom-color,
+);
+
+// scss-docs-end theme-colors-map
+
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-negative-margins: true;
+
+//
+
+$spacers: (
+);
+// scss-docs-end spacer-variables-maps
+
+// Position
+// scss-docs-start position-map
+$position-values: (
+);
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 577px,
+    mds: 770px,
+    md: 822px,
+    slg: 1024px,
+    lg: 1282px,
+    xl: 1368px,
+    xxl: 1442px
+);
+//Register your fonts and add them to the following map 
+//to create the bootstrap classes
+$font-path : "../fonts";
+$fonts-family: (
+    monospace: var(--#{$prefix}font-monospace)
+);
+$font-sizes: (
+    12: 12px,
+);
