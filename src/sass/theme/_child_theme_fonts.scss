@@ -1,0 +1,12 @@
+//To start register here the sources that you will use in the project.
+$font-path : "../fonts/";
+
+@font-face {
+    font-family: 'JejuGothic';
+    src:url($font-path + 'JejuGothic.ttf.woff') format('woff'),
+        url($font-path + 'JejuGothic.ttf.svg#JejuGothic') format('svg'),
+        url($font-path + 'JejuGothic.ttf.eot'),
+        url($font-path + 'JejuGothic.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,17 +1,105 @@
-// New utilities can be added in here
-// @see https://getbootstrap.com/docs/5.2/utilities/api/#using-the-api
+/// Description New utilities can be added in here
+/// @see https://getbootstrap.com/docs/5.2/utilities/api/#using-the-api
 
-$utilities: (
-    "font-family": (
-        property: font-family,
+///Description Fonts
+/// @see https://getbootstrap.com/docs/5.2/utilities/text/#utilities-api
+$utilities: map-merge($utilities,
+    ("font-family": (property: font-family,
         class: font,
-        values: ($fonts-family)
-      ),    
-      "font-size": (
-        rfs: true,
+        values: map-merge($fonts-family, map-get(map-get($utilities, "font-family"), "values"))),
+      "font-size": (rfs: true,
         property: font-size,
         responsive: true,
         class: fs,
-        values: $font-sizes
+        values: $font-sizes ),
+      "line-height": (property: line-height,
+        responsive: true,
+        class: lh,
+        values: map-merge($line-heights, map-get(map-get($utilities, "line-height"), "values"))),
+    ),
+  );
+
+/// Description Margin and Padding
+///@see https://getbootstrap.com/docs/5.2/utilities/spacing/#utilities-api
+$utilities: map-merge($utilities,
+    ("margin-x": map-merge(map-get($utilities, "margin-x"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "margin-x"), "values"))),
       ),
-);
+      "margin-start": map-merge(map-get($utilities, "margin-start"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "margin-start"), "values"))),
+      ),
+      "margin-end": map-merge(map-get($utilities, "margin-end"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "margin-end"), "values"))),
+      ),
+      "padding-x": map-merge(map-get($utilities, "padding-x"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "padding-x"), "values"))),
+      ),
+      "padding-end": map-merge(map-get($utilities, "padding-end"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "padding-end"), "values"))),
+      ),
+      "padding-start": map-merge(map-get($utilities, "padding-start"),
+        (values: map-merge($spacers-vw, map-get(map-get($utilities, "padding-start"), "values"))),
+      ),
+    ));
+
+/// Description Position
+/// @see https://getbootstrap.com/docs/5.2/utilities/position/#utilities-api
+$utilities: map-merge($utilities,
+    ("top": (property: top,
+        responsive: true,
+        values: map-merge($position-values, map-get(map-get($utilities, "top"), "values"))),
+      "bottom": (property: bottom,
+        responsive: true,
+        values: map-merge($position-values, map-get(map-get($utilities, "bottom"), "values"))),
+      "start": (property: left,
+        responsive: true,
+        class: start,
+        values: map-merge($position-values, map-get(map-get($utilities, "start"), "values"))),
+      "end": (property: right,
+        responsive: true,
+        class: end,
+        values: map-merge($position-values, map-get(map-get($utilities, "end"), "values")))));
+
+///Description Sizing
+/// @see https://getbootstrap.com/docs/5.2/utilities/sizing/#utilities-api
+$utilities: map-merge($utilities,
+    ("width": (property: width,
+        class: w,
+        responsive: true,
+        values: map-merge($sizings, map-get(map-get($utilities, "width"), "values"))),
+      "max-width": (property: max-width,
+        class: mw,
+        values: $max-width),
+      "viewport-width": (property: width,
+        responsive: true,
+        class: vw,
+        values: $sizings-vw),
+      "height": (property: height,
+        class: h,
+        responsive: true,
+        values: map-merge($sizings, map-get(map-get($utilities, "height"), "values"))),
+      "viewport-height": (property: height,
+        responsive: true,
+        class: vh,
+        values: $sizings-vh)));
+
+$utilities: map-merge($utilities,
+    ("bg-opacity": (css-var: true,
+        class: bg-opacity,
+        values: (10: .1,
+          20: .2,
+          25: .25,
+          30: .3,
+          50: .5,
+          60: .6,
+          75: .75,
+          90: .9,
+          100: 1)),
+      "backdrop-filter": (property: backdrop-filter,
+        class: backdrop-filter,
+        values: (
+          5: blur(5px),
+          //10:blur(10px),
+          ))
+      )
+    );

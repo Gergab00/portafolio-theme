@@ -2,17 +2,22 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
 
-// ^ Esconde en Telefonos d-none d-md-block
-// ^ Esconde solamente en Tablet d-sm-block d-md-none d-lg-block
-// ^ Muestra solo en pantallas d-none d-md-none d-lg-block d-xl-block d-xxl-block
-// ^ Esconde en pantallas d-sm-block d-md-block d-lg-none d-xl-none d-xxl-none
+@use "sass:map";
 
 //Your custom colors
-$custom-color: #ffff;
+$light-shade-cyan:#89F7F6;
+$medium-light-shade-red-orange:#F69A71;
+$very-light-shade-magenta:#FEFCFF;
+$shade-blue-magenta:#656476;
+$dark-shade-blue-magenta:#2C293C;
 
 // scss-docs-start custom-colors-map
 $custom-colors: (
-    "custom-color": $custom-color,
+    "light-shade-cyan": $light-shade-cyan,
+    "medium-light-shade-red-orange": $medium-light-shade-red-orange,
+    "very-light-shade-magenta": $very-light-shade-magenta,
+    "shade-blue-magenta": $shade-blue-magenta,
+    "dark-shade-blue-magenta": $dark-shade-blue-magenta,
 );
 
 // scss-docs-end theme-colors-map
@@ -21,16 +26,108 @@ $enable-shadows: true;
 $enable-gradients: true;
 $enable-negative-margins: true;
 
-//
-
-$spacers: (
+$spacer-vw: 1vw;
+$spacers-vw: (
+    auto:auto,
+    try: $spacer-vw * 1,
 );
-// scss-docs-end spacer-variables-maps
 
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=0 {
+    $spacers-vw: map.set($spacers-vw, $n, $spacer-vw * $m);
+    $n: $n +1;
+    $m: $m +.1;
+} 
+
+$max-width: (
+    100: 100%,
+    1200: 1200px,
+    );
+    
+$spacer: 1rem;
+$spacers: (
+    auto:auto,
+    try: $spacer * 1,
+);
+    
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=100 {
+    $spacers: map.set($spacers, $n, $spacer * $m);
+    $n: $n +2;
+    $m: $m +.125;
+}
+
+$sizing: 1%;
+$sizings: (
+    auto:auto,
+    try: $sizing * 1,
+);
+
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=0 {
+    $sizings: map.set($sizings, $n, $sizing * $m);
+    $n: $n +1;
+    $m: $m +1;
+}
+
+$sizing-vw: 1vw;
+$sizings-vw: (
+    100: $sizing-vw * 100,
+    try: $sizing-vw * 1,
+);
+
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=0 {
+    $sizings-vw: map.set($sizings-vw, $n, $sizing-vw * $m);
+    $n: $n +1;
+    $m: $m +1;
+}
+
+$sizing-vh: 1vh;
+$sizings-vh: (
+    100: $sizing-vh * 100,
+    try: $sizing-vh * 1,
+);
+
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=0 {
+    $sizings-vh: map.set($sizings-vh, $n, $sizing-vh * $m);
+    $n: $n +1;
+    $m: $m +1;
+}
+
+// scss-docs-end spacer-variables-maps
 // Position
 // scss-docs-start position-map
+$position: 1%;
 $position-values: (
+    try: $position * 1
 );
+
+$n: 0;
+$m: 0;
+
+/// @todo change the number 0 to the limit that you want to incresa the values
+@while $n <=0 {
+    $position-values: map.set($position-values, $n, $position * $m);
+    $n: $n +1;
+    $m: $m +1;
+}
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -43,12 +140,24 @@ $grid-breakpoints: (
     xl: 1368px,
     xxl: 1442px
 );
+
 //Register your fonts and add them to the following map 
 //to create the bootstrap classes
-$font-path : "../fonts";
 $fonts-family: (
-    monospace: var(--#{$prefix}font-monospace)
+    monospace: monospace,
+    jejugothic : "JejuGothic"
 );
+
 $font-sizes: (
-    12: 12px,
+    16: 1rem,
+    24: 1.5rem,
+    34: 2.125rem,
 );
+
+$line-heights: (
+    16: 1rem,
+);
+
+$offcanvas-horizontal-width: 100vw;
+
+$btn-close-bg: "";

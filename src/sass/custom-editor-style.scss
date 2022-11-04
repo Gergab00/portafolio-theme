@@ -5,6 +5,7 @@
 
 // 2. Include any default variable overrides here
 // ! @see https: //getbootstrap.com/docs/5.2/customize/sass/#importing
+@import "theme/child_theme_fonts";      // Register your fonts
 @import "theme/child_theme_variables";
 
 // 3. Include remainder of required Bootstrap stylesheets
@@ -12,6 +13,7 @@
 
 // 4. Include any default map overrides here
 $theme-colors: map-merge($theme-colors, $custom-colors);
+//$theme-colors:  $custom-colors;
 
 // 5. Include remainder of required parts
 @import "assets/bootstrap5/maps";
@@ -25,7 +27,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "assets/bootstrap5/images";
 @import "assets/bootstrap5/containers";
 @import "assets/bootstrap5/grid";
-@import "assets/bootstrap5/tables";
+//@import "assets/bootstrap5/tables";
 @import "assets/bootstrap5/forms";
 @import "assets/bootstrap5/buttons";
 @import "assets/bootstrap5/transitions";
@@ -37,17 +39,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "assets/bootstrap5/accordion";
 @import "assets/bootstrap5/breadcrumb";
 @import "assets/bootstrap5/pagination";
-@import "assets/bootstrap5/badge";
-@import "assets/bootstrap5/alert";
-@import "assets/bootstrap5/progress";
+//@import "assets/bootstrap5/badge";
+//@import "assets/bootstrap5/alert";
+//@import "assets/bootstrap5/progress";
 @import "assets/bootstrap5/list-group";
 @import "assets/bootstrap5/close";
-@import "assets/bootstrap5/toasts";
+//@import "assets/bootstrap5/toasts";
 @import "assets/bootstrap5/modal";
-@import "assets/bootstrap5/tooltip";
-@import "assets/bootstrap5/popover";
-@import "assets/bootstrap5/carousel";
-@import "assets/bootstrap5/spinners";
+//@import "assets/bootstrap5/tooltip";
+//@import "assets/bootstrap5/popover";
+//@import "assets/bootstrap5/carousel";
+//@import "assets/bootstrap5/spinners";
 @import "assets/bootstrap5/offcanvas";
 @import "assets/bootstrap5/placeholders";
 @import "assets/bootstrap5/helpers";
@@ -59,13 +61,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // 8. Add additional custom code here
 // Start bringing in colors and styles. 
 @import "assets/animate/animate";
-@import "assets/understrap/theme/colors";
+
 
 @import "assets/fontawesome6/fontawesome"; // <------- Font Awesome Icon font
 @import "assets/fontawesome6/brands.scss"; // <------- Font Awesome Icon font
 @import "assets/fontawesome6/regular.scss"; // <------- Font Awesome Icon font
 @import "assets/fontawesome6/solid.scss"; // <------- Font Awesome Icon font
 //@import "icomoon/icomoon.scss"; // <------- Custom Icomoon Icon font
+@import "theme/child_theme_mixins"; //<------------------- Necessary and useful mixins for the theme
 @import "theme/child_theme";
 
 

@@ -1,15 +1,6 @@
 //Add your styles into this file
 @use "sass:selector";
 
-.wrapper {
-  padding: 0;
-
-  @include media-breakpoint-down(md) {
-      position: relative;
-      overflow: hidden;
-  }
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -56,5 +47,9 @@
 
 //---------------------------------------------- NAVBAR (END) ----------------------------------------//
 //---------------------------------------------- OTHER ----------------------------------------------//
-
+@each $color, $value in $theme-colors {
+  a.underline-#{$color} {
+    @include hover-underline(fade, 'center', 2px, $color: $value)
+  }
+}
 //---------------------------------------------- OTHER (END) ----------------------------------------//
