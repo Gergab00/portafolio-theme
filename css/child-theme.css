@@ -10093,16 +10093,12 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+.shadow-left-offcanvas {
+  box-shadow: inset 0px 0px 50px rgba(18, 17, 39, 0.5) !important;
 }
 
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-.shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+.shadow-right-offcanvas {
+  box-shadow: inset -50px 0px 50px 0px rgba(0, 0, 0, 0.5) !important;
 }
 
 .shadow-none {
@@ -15559,6 +15555,10 @@ textarea.form-control-lg {
   font-size: 1rem !important;
 }
 
+.fs-20 {
+  font-size: 1.25rem !important;
+}
+
 .fs-24 {
   font-size: calc(1.275rem + 0.3vw) !important;
 }
@@ -15875,32 +15875,16 @@ textarea.form-control-lg {
   --bs-bg-opacity: 0.1;
 }
 
-.bg-opacity-20 {
-  --bs-bg-opacity: 0.2;
-}
-
 .bg-opacity-25 {
   --bs-bg-opacity: 0.25;
-}
-
-.bg-opacity-30 {
-  --bs-bg-opacity: 0.3;
 }
 
 .bg-opacity-50 {
   --bs-bg-opacity: 0.5;
 }
 
-.bg-opacity-60 {
-  --bs-bg-opacity: 0.6;
-}
-
 .bg-opacity-75 {
   --bs-bg-opacity: 0.75;
-}
-
-.bg-opacity-90 {
-  --bs-bg-opacity: 0.9;
 }
 
 .bg-opacity-100 {
@@ -16001,9 +15985,22 @@ textarea.form-control-lg {
   visibility: hidden !important;
 }
 
-.backdrop-filter-5 {
+.filter-5 {
   -webkit-backdrop-filter: blur(5px) !important;
   backdrop-filter: blur(5px) !important;
+}
+
+.filter-blur-10 {
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.bgs-24 {
+  background-size: 1.5rem !important;
+}
+
+.skew-x-330 {
+  transform: skewX(330deg) !important;
 }
 
 @media (min-width: 577px) {
@@ -20054,6 +20051,9 @@ textarea.form-control-lg {
   }
   .fs-sm-16 {
     font-size: 1rem !important;
+  }
+  .fs-sm-20 {
+    font-size: 1.25rem !important;
   }
   .fs-sm-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
@@ -24135,6 +24135,9 @@ textarea.form-control-lg {
   .fs-mds-16 {
     font-size: 1rem !important;
   }
+  .fs-mds-20 {
+    font-size: 1.25rem !important;
+  }
   .fs-mds-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
   }
@@ -28214,6 +28217,9 @@ textarea.form-control-lg {
   }
   .fs-md-16 {
     font-size: 1rem !important;
+  }
+  .fs-md-20 {
+    font-size: 1.25rem !important;
   }
   .fs-md-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
@@ -32295,6 +32301,9 @@ textarea.form-control-lg {
   .fs-slg-16 {
     font-size: 1rem !important;
   }
+  .fs-slg-20 {
+    font-size: 1.25rem !important;
+  }
   .fs-slg-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
   }
@@ -36374,6 +36383,9 @@ textarea.form-control-lg {
   }
   .fs-lg-16 {
     font-size: 1rem !important;
+  }
+  .fs-lg-20 {
+    font-size: 1.25rem !important;
   }
   .fs-lg-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
@@ -40455,6 +40467,9 @@ textarea.form-control-lg {
   .fs-xl-16 {
     font-size: 1rem !important;
   }
+  .fs-xl-20 {
+    font-size: 1.25rem !important;
+  }
   .fs-xl-24 {
     font-size: calc(1.275rem + 0.3vw) !important;
   }
@@ -44534,6 +44549,9 @@ textarea.form-control-lg {
   }
   .fs-xxl-16 {
     font-size: 1rem !important;
+  }
+  .fs-xxl-20 {
+    font-size: 1.25rem !important;
   }
   .fs-xxl-24 {
     font-size: calc(1.275rem + 0.3vw) !important;

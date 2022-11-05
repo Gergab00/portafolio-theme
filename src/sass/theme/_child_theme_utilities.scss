@@ -83,23 +83,41 @@ $utilities: map-merge($utilities,
         class: vh,
         values: $sizings-vh)));
 
-$utilities: map-merge($utilities,
-    ("bg-opacity": (css-var: true,
-        class: bg-opacity,
-        values: (10: .1,
-          20: .2,
-          25: .25,
-          30: .3,
-          50: .5,
-          60: .6,
-          75: .75,
-          90: .9,
-          100: 1)),
-      "backdrop-filter": (property: backdrop-filter,
-        class: backdrop-filter,
-        values: (
-          5: blur(5px),
-          //10:blur(10px),
-          ))
-      )
-    );
+///Description Add utilities
+/// @see https://getbootstrap.com/docs/5.2/utilities/api/#add-utilities
+$utilities: map-merge(
+	$utilities,
+	(
+		"backdrop-filter": (
+			property: backdrop-filter,
+			class: filter,
+			values: (
+        5: blur(5px),
+				blur-10: blur(10px),
+			),
+		),
+		"shadow": (
+			property: box-shadow,
+			class: shadow,
+			values: (
+				left-offcanvas: inset 0px 0px 50px rgba(18, 17, 39, 0.5),
+				right-offcanvas: inset -50px 0px 50px 0px rgba(0, 0, 0, 0.5),
+				none: none,
+			),
+		),
+		"background-size": (
+			property: background-size,
+			class: bgs,
+			values: (
+				24: 1.5rem,
+			),
+		),
+		"skew-x": (
+			property: transform,
+			class: skew-x,
+			values: (
+				330: skewX(330deg),
+			),
+		),
+	)
+);
