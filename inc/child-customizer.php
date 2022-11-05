@@ -22,9 +22,14 @@ class Child_Theme_Customizer
     {
         // Register our Panels
         add_action('customize_register', array($this, 'skyrocket_add_customizer_panels'));
+        add_action('customize_register', array($this, 'childtheme_add_customizer_panels'));
 
 		// Register our sections
 		add_action( 'customize_register', array( $this, 'skyrocket_add_customizer_sections' ) );
+		add_action( 'customize_register', array( $this, 'childtheme_add_customizer_sections' ) );
+		
+		// Register your custom controls
+		add_action( 'customize_register', array( $this, 'childtheme_register_custom_controls' ) );
 
 		// Register our sample Custom Control controls
 		add_action( 'customize_register', array( $this, 'skyrocket_register_sample_custom_controls' ) );
@@ -94,7 +99,7 @@ class Child_Theme_Customizer
     public function skyrocket_add_customizer_panels($wp_customize)
     {
         $wp_customize->add_panel(
-            'child_theme_settings_panles',
+            'child_theme_settings_panels',
             array(
                 'title' => __('Theme Settings', 'understrap'),
                 'capability' => 'edit_theme_options',
@@ -103,6 +108,11 @@ class Child_Theme_Customizer
             )
         );
     }
+
+	public function childtheme_add_customizer_panels( $wp_customize )
+	{
+
+	}
 
 	/**
 	 * Register the Customizer sections
@@ -116,7 +126,7 @@ class Child_Theme_Customizer
 			array(
 				'title' => __( 'Main section', 'skyrocket' ),
 				'description' => esc_html__( 'This is an example section, we need to change..', 'skyrocket' ),
-				'panel' => 'child_theme_settings_panles'
+				'panel' => 'child_theme_settings_panels'
 			)
 		);
 
@@ -140,6 +150,42 @@ class Child_Theme_Customizer
 			)
 		);
 	}
+
+	public function childtheme_add_customizer_sections( $wp_customize )
+	{
+		$wp_customize->add_section( 'menu_section',
+			array(
+				'title' => __( 'Menu section', 'skyrocket' ),
+				'description' => esc_html__( 'Here you can configure some things from the menu', 'skyrocket' ),
+				'panel' => 'child_theme_settings_panels'
+			)
+		);
+	}
+
+	/**
+	 * Register our custom controls
+	 */
+	public function childtheme_register_custom_controls( $wp_customize )
+	{
+		// Test of Number Control
+        $wp_customize->add_setting('_phone_number',
+            array(
+                'default' => $this->defaults['sample_number_text'],
+                'transport' => 'refresh',
+				'type' => 'option',
+                'sanitize_callback' => 'skyrocket_sanitize_integer',
+            )
+        );
+        $wp_customize->add_control('_phone_number',
+            array(
+                'label' => __('Main Phone Number', 'skyrocket'),
+                'description' => esc_html__('Add here the phone number to show in the menu.', 'skyrocket'),
+                'section' => 'menu_section',
+                'type' => 'number',
+            )
+        );
+	}
+
 
 	/**
 	 * Register our sample custom controls

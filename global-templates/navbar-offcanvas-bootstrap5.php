@@ -13,7 +13,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container 	= get_theme_mod( 'understrap_container_type' );
+$phone		= get_option( '_phone_number' );
 ?>
 
 <nav id="main-nav" class="navbar bg-dark-shade-blue-magenta">
@@ -25,7 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <div class="<?php echo esc_attr( $container ); ?> justify-content-center">
 
-        <div class="row w-100 mw-1200">
+        <div class="row w-100 mw-1200 align-items-center">
             <div class="col-6">
                 <!-- Your site title as branding in the menu -->
                 <?php if ( ! has_custom_logo() ) { ?>
@@ -50,7 +51,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <!-- end custom logo -->
             </div>
             <div class="col-3">
-                Phone Here
+                <span class="text-light-shade-cyan fs-20"> < </span>
+				<span class="text-medium-light-shade-red-orange fs-20">
+					Call me: 
+				</span>
+				<a href="tel:+52<?php _e($phone, 'understrap'); ?>" class="text-medium-light-shade-red-orange fs-20 text-decoration-none">
+					<?php _e($phone, 'understrap'); ?>
+				</a>
+                <span class="text-light-shade-cyan fs-20"> /> </span>
             </div>
             <div class="col-3">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -63,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
                     <div class="row vh-100">
-                        <div class="col-8 bg-dark-shade-blue-magenta opacity-75 d-flex justify-content-center align-items-center">
+                        <div class="col-8 bg-dark-shade-blue-magenta opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
                             <!-- Your site title as branding in the menu -->
                             <?php if ( ! has_custom_logo() ) { ?>
 
@@ -87,7 +95,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
                             <!-- end custom logo -->
                         </div>
-                        <div class="col-4 bg-white">
+                        <div class="col-4 bg-white shadow-left-offcanvas">
                             <div class="offcanvas-header justify-content-end">
                                 <button type="button" class="btn-close bg-transparent mt-100 mx-auto" data-bs-dismiss="offcanvas" aria-label="Close">
 									<i class="fa-solid fa-xmark fs-34"></i>

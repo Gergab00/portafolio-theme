@@ -244,7 +244,7 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 $item_output .= self::linkmod_element_open($linkmod_type, $attributes);
             } else {
                 // With no link mod type set this must be a standard <a> tag.
-                $item_output .= '<a' . $attributes . '>';
+                $item_output .= '<a' . $attributes . '><span class="text-light-shade-cyan"> < </span>';
             }
 
             /**
@@ -295,7 +295,7 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 $item_output .= self::linkmod_element_close($linkmod_type, $attributes);
             } else {
                 // With no link mod type set this must be a standard <a> tag.
-                $item_output .= '</a>';
+                $item_output .= '<span class="text-light-shade-cyan"> /> </span></a>';
             }
 
             $item_output .= isset($args->after) ? $args->after : '';
