@@ -27,7 +27,7 @@ $phone		= get_option( '_phone_number' );
     <div class="<?php echo esc_attr( $container ); ?> justify-content-center">
 
         <div class="row w-100 mw-1200 align-items-center">
-            <div class="col-6">
+            <div class="col-sm-6 text-start text-sm-center">
                 <!-- Your site title as branding in the menu -->
                 <?php if ( ! has_custom_logo() ) { ?>
 
@@ -50,7 +50,7 @@ $phone		= get_option( '_phone_number' );
 			?>
                 <!-- end custom logo -->
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-sm-5 text-center">
                 <span class="text-light-shade-cyan fs-20"> < </span>
 				<span class="text-medium-light-shade-red-orange fs-20">
 					Call me: 
@@ -60,7 +60,7 @@ $phone		= get_option( '_phone_number' );
 				</a>
                 <span class="text-light-shade-cyan fs-20"> /> </span>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-sm-1 text-sm-end text-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false"
                     aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
@@ -71,7 +71,7 @@ $phone		= get_option( '_phone_number' );
 
 
                     <div class="row vh-100">
-                        <div class="col-8 bg-dark-shade-blue-magenta opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
+                        <div class="col-md-8 col-sm-6 bg-dark-shade-blue-magenta opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
                             <!-- Your site title as branding in the menu -->
                             <?php if ( ! has_custom_logo() ) { ?>
 
@@ -95,9 +95,9 @@ $phone		= get_option( '_phone_number' );
 							?>
                             <!-- end custom logo -->
                         </div>
-                        <div class="col-4 bg-white shadow-left-offcanvas">
+                        <div class="col-md-4 col-sm-6 bg-white shadow-left-offcanvas">
                             <div class="offcanvas-header justify-content-end">
-                                <button type="button" class="btn-close bg-transparent mt-100 mx-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <button type="button" class="btn-close bg-transparent mt-md-100 mt-sm-50 mt-25 mx-auto" data-bs-dismiss="offcanvas" aria-label="Close">
 									<i class="fa-solid fa-xmark fs-34"></i>
 								</button>
                             </div><!-- .offcanvas-header -->
@@ -106,7 +106,7 @@ $phone		= get_option( '_phone_number' );
 							wp_nav_menu(
 								array(
 									'theme_location'  => 'primary',
-									'container_class' => 'offcanvas-body',
+									'container_class' => 'offcanvas-body text-start',
 									'container_id'    => '',
 									'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
 									'fallback_cb'     => '',
