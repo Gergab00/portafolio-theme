@@ -17,3 +17,11 @@ function setup_image_sizes()
 {
     add_image_size('logo-size', 162, 36); // 300 pixels wide (and unlimited height)
 }
+
+register_nav_menus(
+    array(
+        'primary' => __( 'Primary Menu', 'understrap' ),
+        'about' => __( 'About Menu', 'understrap' ),
+        'resources' => __( 'Resources Menu', 'understrap' ),
+    )
+);

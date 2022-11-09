@@ -52,4 +52,11 @@
     @include hover-underline(fade, 'center', 2px, $color: $value)
   }
 }
+
+.social-link {
+  transition: transform 600ms ease;
+  &:hover {
+    transform: scale(-1, 2);
+  }
+}
 //---------------------------------------------- OTHER (END) ----------------------------------------//

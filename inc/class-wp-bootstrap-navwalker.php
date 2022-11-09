@@ -100,6 +100,7 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
+
             if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
                 $t = '';
                 $n = '';
@@ -146,9 +147,14 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 $classes[] = 'active';
             }
 
-            // Add some additional default classes to the item.
+            // Add some additional default classes to the item. list-group-item
             $classes[] = 'menu-item-' . $item->ID;
-            $classes[] = 'nav-item';
+            if(!in_array($args->theme_location, array('about', 'resources')))
+            {
+                $classes[] = 'nav-item';
+            } else {
+                $classes[] = 'list-group-item bg-dark-shade-blue-magenta';
+            }
 
             // Allow filtering the classes.
             $classes = apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth);
@@ -205,6 +211,8 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 // Items in dropdowns use .dropdown-item instead of .nav-link.
                 if ($depth > 0) {
                     $atts['class'] = 'dropdown-item';
+                } else if(in_array($args->theme_location, array('about', 'resources'))) {
+                    $atts['class'] = 'fs-20 text-very-light-shade-magenta text-decoration-none';
                 } else {
                     $atts['class'] = 'nav-link fs-34 text-medium-light-shade-red-orange underline-light-shade-cyan pb-0 mb-2';
                 }
@@ -242,6 +250,8 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
             if ('' !== $linkmod_type) {
                 // is linkmod, output the required element opener.
                 $item_output .= self::linkmod_element_open($linkmod_type, $attributes);
+            } else if( in_array($args->theme_location, array('about', 'resources')) ) {
+                $item_output .= '<a' . $attributes . '><span class="text-light-shade-cyan"> # </span>';
             } else {
                 // With no link mod type set this must be a standard <a> tag.
                 $item_output .= '<a' . $attributes . '><span class="text-light-shade-cyan"> < </span>';
@@ -293,6 +303,10 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
             if ('' !== $linkmod_type) {
                 // is linkmod, output the required element opener.
                 $item_output .= self::linkmod_element_close($linkmod_type, $attributes);
+            } else if( in_array($args->theme_location, array('about', 'resources')) ) {
+        
+                $item_output .= '</a>';
+        
             } else {
                 // With no link mod type set this must be a standard <a> tag.
                 $item_output .= '<span class="text-light-shade-cyan"> /> </span></a>';

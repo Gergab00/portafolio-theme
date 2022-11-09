@@ -160,6 +160,14 @@ class Child_Theme_Customizer
 				'panel' => 'child_theme_settings_panels'
 			)
 		);
+
+		$wp_customize->add_section( 'footer_section',
+			array(
+				'title' => __( 'Footer section', 'skyrocket' ),
+				'description' => esc_html__( 'Here you can configure some things from the footer', 'skyrocket' ),
+				'panel' => 'child_theme_settings_panels'
+			)
+		);
 	}
 
 	/**
@@ -167,6 +175,7 @@ class Child_Theme_Customizer
 	 */
 	public function childtheme_register_custom_controls( $wp_customize )
 	{
+		//Menu
 		// Test of Number Control
         $wp_customize->add_setting('_phone_number',
             array(
@@ -184,6 +193,27 @@ class Child_Theme_Customizer
                 'type' => 'number',
             )
         );
+
+		// Footer
+		$wp_customize->add_setting( '_social_links',
+			array(
+				'default' => $this->defaults['sample_sortable_repeater_control'],
+				'transport' => 'refresh',
+				'type' => 'option',
+				'sanitize_callback' => 'skyrocket_url_sanitization'
+			)
+		);
+		$wp_customize->add_control( new Skyrocket_Sortable_Repeater_Custom_Control( $wp_customize, '_social_links',
+			array(
+				'label' => __( 'Social Links', 'skyrocket' ),
+				'description' => esc_html__( 'Configure your social links here. The icons appers automatically.', 'skyrocket' ),
+				'section' => 'footer_section',
+				'button_labels' => array(
+					'add' => __( 'Add Row', 'skyrocket' ),
+					'placeholder' => __( 'https://', 'skyrocket' ),
+				)
+			)
+		) );
 	}
 
 
