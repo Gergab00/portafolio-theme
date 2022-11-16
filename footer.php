@@ -83,7 +83,7 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
                 <hr class="border boder-very-light-shade-magenta opacity-100">
             </div>
             <div class="row text-white mw-1200 w-100">
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
                         <span class="text-medium-light-shade-red-orange">.</span> <span
                             class="text-light-shade-cyan text-lowercase">About</span>
@@ -103,7 +103,7 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
 							);
 							?>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
                         <span class="text-medium-light-shade-red-orange">.</span> <span
                             class="text-light-shade-cyan text-lowercase">Resources</span>
@@ -123,7 +123,7 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
 							);
 							?>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34 py-8">
                         <span class="text-medium-light-shade-red-orange">.</span> <span
                             class="text-light-shade-cyan text-lowercase">suscribe</span>

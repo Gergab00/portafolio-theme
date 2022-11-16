@@ -23,7 +23,7 @@ $title = explode(" ", $title);
     <?php echo get_block_wrapper_attributes(['class' => 'container-fluid d-flex flex-column justify-content-start align-items-center px-0 mx-auto vh-100']); ?>
     data-block="home-header">
 
-	<div class="row align-items-center justify-content-between w-100 h-100 mh-100vh">
+	<div class="row align-items-center justify-content-between w-100 h-md-100 mh-100vh">
         <div class="col-md-4 mx-auto text-center">
 
             <h1 class="display-1 font-weight-bold text-very-light-shade-magenta">
@@ -35,7 +35,7 @@ $title = explode(" ", $title);
         </div>
         <!-- in mobile remove the clippath -->
         <div class="col-md-8 h-100 clipped-md-parallelogram"
-            style="min-height: 350px; background-image: url(<?php echo wp_get_attachment_image_url( $media['id'], 'full', false );  ?>); background-position: center; background-size: cover;">
+            style="min-height: 350px; background-image: url(<?php echo wp_get_attachment_image_url( $media['id'], 'full', false );  ?>); background-position: top center; background-size: cover;">
 
         </div>
     </div>
