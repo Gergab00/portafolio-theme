@@ -54,7 +54,7 @@
     "@fortawesome/fontawesome-free": "^6.1.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0-beta1",
-    "create-understrap-backbone": "^0.9.4",
+    "create-understrap-backbone": "^1.0.0",
     "flickity": "^3.0.0",
     "flickity-as-nav-for": "^3.0.0",
     "hover.css": "^2.3.2"
