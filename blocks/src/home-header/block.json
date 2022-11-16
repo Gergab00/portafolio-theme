@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "portafolio-theme/home-header",
+	"category": "theme",
+	"version": "0.9.0",
+	"title": "Home Header",
+	"icon": "block-default",
+	"description": "Block to modify the home header.",
+	"attributes": {
+		"title":{
+			"type":"string"
+		},
+		"media": {
+			"type": "object",
+			"default": {
+				"url": "",
+				"id": 0
+			}
+		},
+		"text_btn": {
+			"type": "string"
+		},
+		"post": {
+			"type": "object"
+		}
+	},
+	"supports": {},
+	"textdomain": "portafolio-theme",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

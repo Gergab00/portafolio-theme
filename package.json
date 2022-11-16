@@ -20,14 +20,14 @@
     "dist": "npm-run-all --parallel css js",
     "dist-build": "node src/build/dist-build.js",
     "dist-clean": "node src/build/dist-clean.js",
-    "compile": "npm-run-all css js",
-    "build": "wp-scripts build --webpack-copy-php",
+    "compile": "npm-run-all watch start",
+    "build": "wp-scripts build --webpack-copy-php --output-path=blocks/build --webpack-src-dir=blocks/src",
     "format": "wp-scripts format",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start --webpack-copy-php",
+    "start": "wp-scripts start --webpack-copy-php --output-path=blocks/build --webpack-src-dir=blocks/src",
     "config": "node ./node_modules/create-understrap-backbone/index.js"
   },
   "engines": {
@@ -54,7 +54,7 @@
     "@fortawesome/fontawesome-free": "^6.1.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0-beta1",
-    "create-understrap-backbone": "^0.9.3",
+    "create-understrap-backbone": "^0.9.4",
     "flickity": "^3.0.0",
     "flickity-as-nav-for": "^3.0.0",
     "hover.css": "^2.3.2"

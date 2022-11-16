@@ -43,9 +43,12 @@ function theme_register_block()
                  */
                 'render_callback' => function ($attributes, $content, $block) {
                     ob_start();
-                    require_once get_theme_file_path('blocks/build/some-one/template.php');
+                    require_once get_theme_file_path('blocks/build/some-one/render.php');
                     return ob_get_clean();
                 },
             ));
 }
 add_action('init', 'theme_register_block');
+
+require __DIR__.'/registrer-block/home-header.php';
+

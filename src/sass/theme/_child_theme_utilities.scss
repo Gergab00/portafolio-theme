@@ -78,6 +78,9 @@ $utilities: map-merge($utilities,
         class: h,
         responsive: true,
         values: map-merge($sizings, map-get(map-get($utilities, "height"), "values"))),
+      "max-height": (property: max-height,
+        class: mh,
+        values: $max-width),
       "viewport-height": (property: height,
         responsive: true,
         class: vh,
@@ -90,7 +93,7 @@ $utilities: map-merge(
 	(
 		"backdrop-filter": (
 			property: backdrop-filter,
-			class: filter,
+			class: backdrop-filter,
 			values: (
         5: blur(5px),
 				blur-10: blur(10px),
@@ -119,5 +122,22 @@ $utilities: map-merge(
 				330: skewX(330deg),
 			),
 		),
+    "clipped": (
+			property: clip-path,
+			class: clipped,
+      responsive: true,
+			values: (
+				diagonal: polygon(50% 0, 100% 0, 100% 100%, 0% 100%),
+        parallelogram: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%),
+			),
+		),
+    "text-opacity": (
+      css-var: true,
+      css-variable-name: border-radius,
+      class: border-radius,
+      values: (
+        30: 30%,
+      )
+    ),
 	)
 );

@@ -16,6 +16,8 @@ add_action('after_setup_theme', 'setup_image_sizes');
 function setup_image_sizes()
 {
     add_image_size('logo-size', 162, 36); // 300 pixels wide (and unlimited height)
+    add_image_size('third-320-241', 320, 241, array('center', 'top'));
+    add_image_size('half-510-384', 520, 384, array('center', 'top'));
 }
 
 register_nav_menus(

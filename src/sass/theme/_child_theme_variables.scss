@@ -43,6 +43,7 @@ $m: 0;
 } 
 
 $max-width: (
+    100vh: 100vh,
     100: 100%,
     1200: 1200px,
     );
@@ -51,6 +52,7 @@ $spacer: 1rem;
 $spacers: (
     auto:auto,
     try: $spacer * 1,
+    120: $spacer * 7.5,
 );
     
 $n: 0;
@@ -67,6 +69,7 @@ $sizing: 1%;
 $sizings: (
     auto:auto,
     try: $sizing * 1,
+    40: $sizing * 40,
 );
 
 $n: 0;
