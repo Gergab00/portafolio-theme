@@ -15,7 +15,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container 	= get_theme_mod( 'understrap_container_type' );
+$container 	= get_option( '_container' );
 $phone		= get_option( '_phone_number' );
 $mail		= get_option( '_mail', 'contacto@gerardogonzalez.dev');
 $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
