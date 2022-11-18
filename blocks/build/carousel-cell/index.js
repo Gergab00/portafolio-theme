@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/carousel-cell/edit.js":
-/*!***********************************!*\
-  !*** ./src/carousel-cell/edit.js ***!
-  \***********************************/
+/***/ "./blocks/src/carousel-cell/edit.js":
+/*!******************************************!*\
+  !*** ./blocks/src/carousel-cell/edit.js ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/carousel-cell/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/src/carousel-cell/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -42,7 +42,9 @@ const TEMPLATE = [['core/heading', {
   placeholder: 'Title',
   level: 3
 }], ['core/image', {
-  url: 'https://picsum.photos/400/600'
+  url: 'https://picsum.photos/200/300',
+  height: 300,
+  width: 200
 }], ['core/heading', {
   placeholder: 'Subtitle',
   level: 4
@@ -69,7 +71,8 @@ function Edit(_ref) {
     attributes,
     setAttributes
   } = _ref;
-  console.table('attr: ', attributes);
+  //	console.table('attr: ', attributes);
+
   const bodyTitle = 'My Block Settings';
   const opened = true;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, {
@@ -79,16 +82,17 @@ function Edit(_ref) {
     opened: opened
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
-    template: TEMPLATE
-  }), ";"))));
+    template: TEMPLATE,
+    templateLock: "insert"
+  })))));
 }
 
 /***/ }),
 
-/***/ "./src/carousel-cell/index.js":
-/*!************************************!*\
-  !*** ./src/carousel-cell/index.js ***!
-  \************************************/
+/***/ "./blocks/src/carousel-cell/index.js":
+/*!*******************************************!*\
+  !*** ./blocks/src/carousel-cell/index.js ***!
+  \*******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -98,9 +102,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/carousel-cell/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/carousel-cell/edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/carousel-cell/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./blocks/src/carousel-cell/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./blocks/src/carousel-cell/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./blocks/src/carousel-cell/block.json");
 
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
@@ -140,10 +144,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/carousel-cell/editor.scss":
-/*!***************************************!*\
-  !*** ./src/carousel-cell/editor.scss ***!
-  \***************************************/
+/***/ "./blocks/src/carousel-cell/editor.scss":
+/*!**********************************************!*\
+  !*** ./blocks/src/carousel-cell/editor.scss ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -152,10 +156,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/carousel-cell/style.scss":
-/*!**************************************!*\
-  !*** ./src/carousel-cell/style.scss ***!
-  \**************************************/
+/***/ "./blocks/src/carousel-cell/style.scss":
+/*!*********************************************!*\
+  !*** ./blocks/src/carousel-cell/style.scss ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -214,10 +218,10 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/carousel-cell/block.json":
-/*!**************************************!*\
-  !*** ./src/carousel-cell/block.json ***!
-  \**************************************/
+/***/ "./blocks/src/carousel-cell/block.json":
+/*!*********************************************!*\
+  !*** ./blocks/src/carousel-cell/block.json ***!
+  \*********************************************/
 /***/ (function(module) {
 
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"portafolio-theme/carousel-cell","category":"theme","version":"0.9.0","title":"Carousel Cell","icon":"block-default","description":"Wordpress theme to create your portfolio and web CV, it is made with the Understrap Framework.","attributes":{},"supports":{},"textdomain":"portafolio-theme","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
@@ -379,7 +383,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkblocks"] = self["webpackChunkblocks"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkPortafolio_Theme"] = self["webpackChunkPortafolio_Theme"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();
@@ -389,7 +393,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["carousel-cell/style-index"], function() { return __webpack_require__("./src/carousel-cell/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["carousel-cell/style-index"], function() { return __webpack_require__("./blocks/src/carousel-cell/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

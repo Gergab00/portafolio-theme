@@ -40,7 +40,7 @@ class CarouselCell {
                  */
                 'render_callback' => function ($attributes, $content, $block) {
                     ob_start();
-                    require_once get_theme_file_path('blocks/build/carousel-cell/render.php');
+                    require get_theme_file_path('blocks/build/carousel-cell/render.php');
                     return ob_get_clean();
                 },
             ));

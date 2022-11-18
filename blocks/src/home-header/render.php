@@ -20,7 +20,7 @@ $title = explode(" ", $title);
 ?>
 
 <section
-    <?php echo get_block_wrapper_attributes(['class' => 'container-fluid d-flex flex-column justify-content-start align-items-center px-0 mx-auto vh-100']); ?>
+    <?php echo get_block_wrapper_attributes(['class' => 'container-fluid d-flex flex-column justify-content-start align-items-center px-0 mx-auto overflow-hidden vh-100']); ?>
     data-block="home-header">
 
 	<div class="row align-items-center justify-content-between w-100 h-md-100 mh-100vh">

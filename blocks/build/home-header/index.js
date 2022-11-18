@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/home-header/edit.js":
-/*!*********************************!*\
-  !*** ./src/home-header/edit.js ***!
-  \*********************************/
+/***/ "./blocks/src/home-header/edit.js":
+/*!****************************************!*\
+  !*** ./blocks/src/home-header/edit.js ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/home-header/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/src/home-header/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -156,10 +156,10 @@ function Edit(_ref) {
 
 /***/ }),
 
-/***/ "./src/home-header/index.js":
-/*!**********************************!*\
-  !*** ./src/home-header/index.js ***!
-  \**********************************/
+/***/ "./blocks/src/home-header/index.js":
+/*!*****************************************!*\
+  !*** ./blocks/src/home-header/index.js ***!
+  \*****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -169,9 +169,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/home-header/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/home-header/edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/home-header/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./blocks/src/home-header/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./blocks/src/home-header/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./blocks/src/home-header/block.json");
 
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
@@ -211,10 +211,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/home-header/editor.scss":
-/*!*************************************!*\
-  !*** ./src/home-header/editor.scss ***!
-  \*************************************/
+/***/ "./blocks/src/home-header/editor.scss":
+/*!********************************************!*\
+  !*** ./blocks/src/home-header/editor.scss ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -223,10 +223,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/home-header/style.scss":
-/*!************************************!*\
-  !*** ./src/home-header/style.scss ***!
-  \************************************/
+/***/ "./blocks/src/home-header/style.scss":
+/*!*******************************************!*\
+  !*** ./blocks/src/home-header/style.scss ***!
+  \*******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -285,10 +285,10 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/home-header/block.json":
-/*!************************************!*\
-  !*** ./src/home-header/block.json ***!
-  \************************************/
+/***/ "./blocks/src/home-header/block.json":
+/*!*******************************************!*\
+  !*** ./blocks/src/home-header/block.json ***!
+  \*******************************************/
 /***/ (function(module) {
 
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"portafolio-theme/home-header","category":"theme","version":"0.9.0","title":"Home Header","icon":"block-default","description":"Block to modify the home header.","attributes":{"title":{"type":"string"},"media":{"type":"object","default":{"url":"","id":0}},"text_btn":{"type":"string"},"post":{"type":"object"}},"supports":{},"textdomain":"portafolio-theme","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
@@ -450,7 +450,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkblocks"] = self["webpackChunkblocks"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkPortafolio_Theme"] = self["webpackChunkPortafolio_Theme"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();
@@ -460,7 +460,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["home-header/style-index"], function() { return __webpack_require__("./src/home-header/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["home-header/style-index"], function() { return __webpack_require__("./blocks/src/home-header/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

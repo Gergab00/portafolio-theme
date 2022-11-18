@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/slider-images/edit.js":
-/*!***********************************!*\
-  !*** ./src/slider-images/edit.js ***!
-  \***********************************/
+/***/ "./blocks/src/slider-images/edit.js":
+/*!******************************************!*\
+  !*** ./blocks/src/slider-images/edit.js ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/slider-images/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/src/slider-images/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -76,10 +76,10 @@ function Edit(_ref) {
 
 /***/ }),
 
-/***/ "./src/slider-images/index.js":
-/*!************************************!*\
-  !*** ./src/slider-images/index.js ***!
-  \************************************/
+/***/ "./blocks/src/slider-images/index.js":
+/*!*******************************************!*\
+  !*** ./blocks/src/slider-images/index.js ***!
+  \*******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -89,9 +89,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/slider-images/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/slider-images/edit.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/slider-images/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./blocks/src/slider-images/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./blocks/src/slider-images/edit.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./blocks/src/slider-images/block.json");
 
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
@@ -131,10 +131,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/slider-images/editor.scss":
-/*!***************************************!*\
-  !*** ./src/slider-images/editor.scss ***!
-  \***************************************/
+/***/ "./blocks/src/slider-images/editor.scss":
+/*!**********************************************!*\
+  !*** ./blocks/src/slider-images/editor.scss ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -143,10 +143,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/slider-images/style.scss":
-/*!**************************************!*\
-  !*** ./src/slider-images/style.scss ***!
-  \**************************************/
+/***/ "./blocks/src/slider-images/style.scss":
+/*!*********************************************!*\
+  !*** ./blocks/src/slider-images/style.scss ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -205,10 +205,10 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/slider-images/block.json":
-/*!**************************************!*\
-  !*** ./src/slider-images/block.json ***!
-  \**************************************/
+/***/ "./blocks/src/slider-images/block.json":
+/*!*********************************************!*\
+  !*** ./blocks/src/slider-images/block.json ***!
+  \*********************************************/
 /***/ (function(module) {
 
 module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"portafolio-theme/slider-images","category":"theme","version":"0.9.0","title":"Slider Images","icon":"block-default","description":"Wordpress theme to create your portfolio and web CV, it is made with the Understrap Framework.","attributes":{},"supports":{},"textdomain":"portafolio-theme","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
@@ -370,7 +370,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkblocks"] = self["webpackChunkblocks"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkPortafolio_Theme"] = self["webpackChunkPortafolio_Theme"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();
@@ -380,7 +380,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["slider-images/style-index"], function() { return __webpack_require__("./src/slider-images/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["slider-images/style-index"], function() { return __webpack_require__("./blocks/src/slider-images/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

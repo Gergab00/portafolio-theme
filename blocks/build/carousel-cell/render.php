@@ -15,6 +15,10 @@ extract( $attributes );
 
 ?>
 
-<section <?php echo get_block_wrapper_attributes(['class' => 'my-class']); ?> data-block="carousel-cell">
-	<?php esc_html_e( 'Carousel Cell – hello from a understrap-framwork-theme block!', 'portafolio-theme' ); ?>
-</section>
+<div <?php echo get_block_wrapper_attributes(['class' => 'carousel-cell d-flex flex-column justify-content-around align-items-center text-white']); ?> data-block="carousel-cell">
+        <?php
+				foreach ($block->parsed_block['innerBlocks'] as $block) {
+					echo $block['innerHTML'];
+				}
+			?>
+</div>

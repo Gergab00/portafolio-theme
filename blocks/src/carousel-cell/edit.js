@@ -17,7 +17,7 @@ import { Panel, PanelBody, PanelRow } from '@wordpress/components';
 const ALLOWED_BLOCKS = ['core/image', 'core/heading'];
 const TEMPLATE = [
     [ 'core/heading', { placeholder: 'Title', level:3 } ],
-    [ 'core/image', {url:'https://picsum.photos/400/600'} ],
+    [ 'core/image', {url:'https://picsum.photos/200/300', height:300, width:200} ],
     [ 'core/heading', { placeholder: 'Subtitle', level:4} ],
 ];
 
@@ -39,7 +39,7 @@ import './editor.scss';
  */
 export default function Edit({attributes, setAttributes}) {
 	
-	console.table('attr: ', attributes);
+//	console.table('attr: ', attributes);
 
 	const bodyTitle = 'My Block Settings';
 	const opened = true;
@@ -49,7 +49,7 @@ export default function Edit({attributes, setAttributes}) {
 			<Panel header="Carousel Cell">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } />;
+						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } templateLock="insert" />
 					</PanelRow>
 				</PanelBody>
 			</Panel>
