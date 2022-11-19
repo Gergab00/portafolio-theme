@@ -99,12 +99,15 @@ $utilities: map-merge(
 				blur-10: blur(10px),
 			),
 		),
+
 		"shadow": (
 			property: box-shadow,
 			class: shadow,
 			values: (
 				left-offcanvas: inset 0px 0px 50px rgba(18, 17, 39, 0.5),
 				right-offcanvas: inset -50px 0px 50px 0px rgba(0, 0, 0, 0.5),
+        top: inset 0px 50px 50px 0px,
+        bottom: inset 0px -50px 50px 0px,
 				none: none,
 			),
 		),

@@ -36,7 +36,7 @@ $phone		= get_option( '_phone_number' );
 
         <!-- ******************* The Navbar Area ******************* -->
         <header id="wrapper-navbar">
-            <nav id="main-nav" class="navbar bg-dark-shade-blue-magenta">
+            <nav id="main-nav" class="navbar bg-danger">
 
                 <h2 id="main-nav-label" class="screen-reader-text">
                     <?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -70,23 +70,23 @@ $phone		= get_option( '_phone_number' );
                             <!-- end custom logo -->
                         </div>
                         <div class="col-md-3 col-sm-5 text-center">
-                            <span class="text-light-shade-cyan fs-20">
+                            <span class="text-primary fs-20">
                                 < </span>
-                                    <span class="text-medium-light-shade-red-orange fs-20">
+                                    <span class="text-secondary fs-20">
                                         Call me:
                                     </span>
                                     <a href="tel:+52<?php _e($phone, 'understrap'); ?>"
-                                        class="text-medium-light-shade-red-orange fs-20 text-decoration-none">
+                                        class="text-secondary fs-20 text-decoration-none">
                                         <?php _e($phone, 'understrap'); ?>
                                     </a>
-                                    <span class="text-light-shade-cyan fs-20"> /> </span>
+                                    <span class="text-primary fs-20"> /> </span>
                         </div>
                         <div class="col-md-3 col-sm-1 text-sm-end text-center">
                             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas"
                                 aria-expanded="false"
                                 aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-                                <i class="fa-solid fa-bars text-very-light-shade-magenta"></i>
+                                <i class="fa-solid fa-bars text-success"></i>
                             </button>
 
                             <div class="offcanvas offcanvas-end bg-transparent backdrop-filter-5" tabindex="-1"
@@ -95,7 +95,7 @@ $phone		= get_option( '_phone_number' );
 
                                 <div class="row vh-100">
                                     <div
-                                        class="col-md-8 col-sm-6 bg-dark-shade-blue-magenta opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
+                                        class="col-md-8 col-sm-6 bg-danger opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
                                         <!-- Your site title as branding in the menu -->
                                         <?php if ( ! has_custom_logo() ) { ?>
 

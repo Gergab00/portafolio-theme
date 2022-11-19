@@ -13,4 +13,5 @@
 require __DIR__.'/registrer-block/home-header.php';
 require __DIR__.'/build/carousel-cell/carousel-cell.php';
 require __DIR__.'/build/slider-images/slider-images.php';
+require __DIR__.'/build/about-block/about-block.php';
 

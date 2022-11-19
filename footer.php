@@ -26,67 +26,67 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
 <footer class="wrapper" id="wrapper-footer">
 
     <div
-        class="<?php echo esc_attr( $container ); ?> bg-dark-shade-blue-magenta d-flex flex-wrap justify-content-center align-items-center">
+        class="<?php echo esc_attr( $container ); ?> bg-danger d-flex flex-wrap justify-content-center align-items-center">
 
             <div class="row mw-1200 w-100 text-white p-16 justify-content-center">
                 <div class="col-md-4 col-sm-6 order-md-1 order-2 mt-md-0 mt-16 text-center">
                     <p>
-                        <span class="rounded-circle border border-3 border-light-shade-cyan p-8 m-8">
-                            <i class="fa-solid fa-phone fs-20 text-very-light-shade-magenta"></i>
+                        <span class="rounded-circle border border-3 border-primary p-8 m-8">
+                            <i class="fa-solid fa-phone fs-20 text-success"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light-shade-cyan fs-20">
+                        <span class="text-primary fs-20">
                             < </span>
                                 <a href="tel:+52<?php _e($phone, 'understrap'); ?>"
-                                    class="text-medium-light-shade-red-orange fs-20 text-decoration-none">
+                                    class="text-secondary fs-20 text-decoration-none">
                                     <?php _e($phone, 'understrap'); ?>
                                 </a>
-                                <span class="text-light-shade-cyan fs-20"> /> </span>
+                                <span class="text-primary fs-20"> /> </span>
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-12 order-md-2 order-1 mt-md-0 mt-16 text-center">
                     <p>
-                        <span class="rounded-circle border border-3 border-light-shade-cyan p-8">
-                            <i class="fa-solid fa-envelope fs-20 text-very-light-shade-magenta"></i>
+                        <span class="rounded-circle border border-3 border-primary p-8">
+                            <i class="fa-solid fa-envelope fs-20 text-success"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light-shade-cyan fs-20">
+                        <span class="text-primary fs-20">
                             < </span>
                                 <a href="mailto:<?php _e($mail, 'understrap'); ?>"
-                                    class="text-medium-light-shade-red-orange fs-20 text-decoration-none">
+                                    class="text-secondary fs-20 text-decoration-none">
                                     <?php _e($mail, 'understrap'); ?>
                                 </a>
-                                <span class="text-light-shade-cyan fs-20"> /> </span>
+                                <span class="text-primary fs-20"> /> </span>
                     </p>
 
                 </div>
                 <div class="col-md-4 col-sm-6 order-3 mt-md-0 mt-16 text-center">
                     <p>
-                        <span class="rounded-circle border border-3 border-light-shade-cyan p-8">
-                            <i class="fa-brands fa-facebook-messenger fs-20 text-very-light-shade-magenta"></i>
+                        <span class="rounded-circle border border-3 border-primary p-8">
+                            <i class="fa-brands fa-facebook-messenger fs-20 text-success"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light-shade-cyan fs-20">
+                        <span class="text-primary fs-20">
                             < </span>
                                 <a href="<?php _e($messenger, 'understrap'); ?>"
-                                    class="text-medium-light-shade-red-orange fs-20 text-decoration-none">
+                                    class="text-secondary fs-20 text-decoration-none">
                                     <?php _e(str_replace('https://m.me/','@',$messenger), 'understrap'); ?>
                                 </a>
-                                <span class="text-light-shade-cyan fs-20"> /> </span>
+                                <span class="text-primary fs-20"> /> </span>
                     </p>
                 </div>
             </div>
             <div class="row mw-1200 w-100">
-                <hr class="border boder-very-light-shade-magenta opacity-100">
+                <hr class="border boder-success opacity-100">
             </div>
             <div class="row text-white mw-1200 w-100">
                 <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
-                        <span class="text-medium-light-shade-red-orange">.</span> <span
-                            class="text-light-shade-cyan text-lowercase">About</span>
+                        <span class="text-secondary">.</span> <span
+                            class="text-primary text-lowercase">About</span>
                     </h3>
                     <?php
 							wp_nav_menu(
@@ -105,8 +105,8 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
-                        <span class="text-medium-light-shade-red-orange">.</span> <span
-                            class="text-light-shade-cyan text-lowercase">Resources</span>
+                        <span class="text-secondary">.</span> <span
+                            class="text-primary text-lowercase">Resources</span>
                     </h3>
                     <?php
 							wp_nav_menu(
@@ -125,16 +125,16 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34 py-8">
-                        <span class="text-medium-light-shade-red-orange">.</span> <span
-                            class="text-light-shade-cyan text-lowercase">suscribe</span>
+                        <span class="text-secondary">.</span> <span
+                            class="text-primary text-lowercase">suscribe</span>
                     </h3>
-                    <label for="email" class="form-label fs-20 text-very-light-shade-magenta py-8">
+                    <label for="email" class="form-label fs-20 text-success py-8">
                         Sign up to me newsletter
                     </label>
                     <div class="input-group py-8">
                         <input type="text" class="form-control" id="email" placeholder="Write your email"
                             aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-medium-light-shade-red-orange" type="button" id="button-addon2"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
 
                 </div>

@@ -26,9 +26,9 @@ $title = explode(" ", $title);
 	<div class="row align-items-center justify-content-between w-100 h-md-100 mh-100vh">
         <div class="col-md-4 mx-auto text-center">
 
-            <h1 class="display-1 font-weight-bold text-very-light-shade-magenta">
-                <?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?> <span class="text-light-shade-cyan"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
-            <a href="#" class="btn btn-medium-light-shade-red-orange text-very-light-shade-magenta fs-32 w-xxl-40 my-16"><?php _e($text_btn, 'understrap'); ?></a>
+            <h1 class="display-1 font-weight-bold text-success">
+                <?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?> <span class="text-primary"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
+            <a href="#" class="btn btn-secondary text-success fs-32 w-xxl-40 my-16"><?php _e($text_btn, 'understrap'); ?></a>
 			<div class="text-white fs-24">
 				<?php _e($content, 'understrap'); ?>
 			</div>
