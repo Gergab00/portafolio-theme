@@ -23,7 +23,7 @@ $container = get_option( '_container' );
 
 ?>
 
-<main class="<?php echo esc_attr( $container ); ?> bg-danger p-0" id="front-page">
+<main class="<?php echo esc_attr( $container ); ?> bg-light p-0" id="front-page">
 <?php
 if ( have_posts() ) :
     while ( have_posts() ) : the_post();
