@@ -37,8 +37,8 @@ $understrapchild_includes = array(
 	'child-extras',                          // Custom functions that act independently of the theme templates.
 	'custom-controls',						 // Load custom-controls files
 	'child-customizer',                      // Customizer additions
-	'mx-metaboxes/mx-metaboxes',			 // Easy metaboxes create and set up
-	'mx-metaboxes/mx-metaboxes-examples',	 // Erase for remove the examples for the pages
+	//'mx-metaboxes/mx-metaboxes',			 // Easy metaboxes create and set up
+	//'mx-metaboxes/mx-metaboxes-examples',	 // Erase for remove the examples for the pages
 	//'child-custom-comments',                 // Custom Comments file.
 	'class-wp-bootstrap-navwalker',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
 	//'child-editor',                          // Load Editor functions.															
