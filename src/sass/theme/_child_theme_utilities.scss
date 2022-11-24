@@ -99,18 +99,10 @@ $utilities: map-merge(
 				blur-10: blur(10px),
 			),
 		),
-
 		"shadow": (
 			property: box-shadow,
 			class: shadow,
-			values: (
-				left-offcanvas: inset 0px 0px 50px rgba($dark, 0.5),
-				right-offcanvas: inset -50px 0px 50px 0px rgba($dark, 0.5),
-        top: inset 0px 50px 50px 0px,
-        bottom: 0px 10px 25px 10px rgba($dark,0.1),
-        regular: 0 .5rem 1rem rgba($dark, .5),
-				none: none,
-			),
+			values: map-merge($shadows, map-get(map-get($utilities, "shadow"), "values"))
 		),
 		"background-size": (
 			property: background-size,
@@ -119,6 +111,12 @@ $utilities: map-merge(
 				24: 1.5rem,
 			),
 		),
+    // scss-docs-end utils-bg-color
+    "gradient": (
+      property: background-image,
+      class: bg,
+      values: map-merge($gradients, map-get(map-get($utilities, "gradient"), "values"))
+    ),
 		"skew-x": (
 			property: transform,
 			class: skew-x,

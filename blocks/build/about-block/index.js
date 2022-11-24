@@ -44,11 +44,11 @@ const TEMPLATE = [['core/columns', {
   className: 'col-sm-4 d-flex align-items-center'
 }, [['core/heading', {
   level: 2,
-  className: 'fs-54 text-success',
+  className: 'fs-54 text-light',
   placeholder: 'Enter your Title...',
   content: 'About Me'
 }]]], ['core/column', {
-  className: 'col-sm-8 text-success'
+  className: 'col-sm-8 text-light'
 }, [['core/paragraph', {}]]]]]];
 
 /**
@@ -80,11 +80,12 @@ function Edit(_ref) {
     header: "About Block"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: bodyTitle,
-    opened: opened
+    opened: opened,
+    className: "bg-dark"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS,
     template: TEMPLATE
-  }), ";"))));
+  })))));
 }
 
 /***/ }),

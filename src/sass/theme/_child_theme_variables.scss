@@ -27,7 +27,7 @@ $success:       #51ad74;//Aqua Forest
 $info:          #A44073;//Dark accent - ROUGE
 $warning:       #ce9d3c;//Old Gold
 $danger:        #f44336;//Pomegranate
-$light:         #F7E7E8;//Light shades - POT POURRI
+$light:         #E0DFDE;//Light shades - ALTO
 $dark:          #131885;//Dark shades - GOVERNOR BAY
 
 // scss-docs-start custom-colors-map
@@ -45,7 +45,26 @@ $custom-colors: (
 // scss-docs-end theme-colors-map
 
 $enable-shadows: true;
+
+$top-bottom-inset:inset 0px -20px 15px -3px rgba($dark,0.1),inset 0px 20px 20px -3px rgba($dark,0.1);
+
+$shadows: (    
+    'left-offcanvas': inset 0px 0px 50px rgba($dark, 0.5),
+    'right-offcanvas': inset -50px 0px 50px 0px rgba($dark, 0.5),
+    'y-inset': $top-bottom-inset,
+    'bottom': 0px 10px 25px 10px rgba($dark,0.1),
+    'regular': 0 .5rem 1rem rgba($dark, .5),
+    none: none,
+);
+
 $enable-gradients: true;
+
+$gradient-center-primary: linear-gradient(transparent, $primary 50%, transparent);
+
+$gradients: (
+    'gradient-center-primary': $gradient-center-primary,
+);
+
 $enable-negative-margins: true;
 
 $spacer-vw: 1vw;

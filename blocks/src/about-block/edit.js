@@ -34,7 +34,7 @@ const TEMPLATE = [
 						'core/heading',
 						{
 							level: 2,
-							className: 'fs-54 text-success',
+							className: 'fs-54 text-light',
 							placeholder: 'Enter your Title...',
 							content: 'About Me',
 						},
@@ -43,7 +43,7 @@ const TEMPLATE = [
 			],
 			[
 				'core/column',
-				{ className: 'col-sm-8 text-success' },
+				{ className: 'col-sm-8 text-light' },
 				[ [ 'core/paragraph', {} ] ],
 			],
 		],
@@ -75,13 +75,12 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<div { ...useBlockProps() }>
 			<Panel header="About Block">
-				<PanelBody title={ bodyTitle } opened={ opened }>
+				<PanelBody title={ bodyTitle } opened={ opened } className="bg-dark">
 					<PanelRow>
 						<InnerBlocks
 							allowedBlocks={ ALLOWED_BLOCKS }
 							template={ TEMPLATE }
 						/>
-						;
 					</PanelRow>
 				</PanelBody>
 			</Panel>

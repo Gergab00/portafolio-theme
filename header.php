@@ -86,7 +86,7 @@ $phone		= get_option( '_phone_number' );
                                 data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas"
                                 aria-expanded="false"
                                 aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-                                <i class="fa-solid fa-bars text-light"></i>
+                                <i class="fa-solid fa-bars fs-32 text-light"></i>
                             </button>
 
                             <div class="offcanvas offcanvas-end bg-primary backdrop-filter-5" tabindex="-1"
