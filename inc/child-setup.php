@@ -18,6 +18,7 @@ function setup_image_sizes()
     add_image_size('logo-size', 162, 36); // 300 pixels wide (and unlimited height)
     add_image_size('third-320-241', 320, 241, array('center', 'top'));
     add_image_size('half-510-384', 520, 384, array('center', 'top'));
+    add_image_size('280-230', 280, 230, array('center', 'top'));
 }
 
 register_nav_menus(

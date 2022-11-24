@@ -29,10 +29,10 @@ class ProjectsBlock {
         add_action( 'init', array( get_called_class(), 'registrer' ) );
         add_action( 'init', array( get_called_class(), 'projectsPosts' ), 0 );
         add_action( 'init', array( get_called_class(), 'projectsTaxonomy' ), 0 );
+        add_action( 'init', array( get_called_class(), 'technology_tags'), 0 );
         add_filter( 'single_template', array( get_called_class(), 'get_custom_post_type_template' ) );
         add_filter( 'archive_template', array( get_called_class(), 'get_custom_post_type_template' ) );
         add_filter( 'excerpt_more', array( get_called_class(), 'projects_excerpt_more' ));
-        add_action( 'init', array( get_called_class(), 'technology_tags'), 0 );
 	}
 
     
@@ -93,7 +93,7 @@ class ProjectsBlock {
                 'description'           => __( 'Post for create your developer projects', 'understrap' ),
                 'labels'                => $labels,
                 'supports'              => array( 'title', 'editor', 'thumbnail' ),
-                'taxonomies'            => array( 'category_projects' ),
+                'taxonomies'            => array( 'category_projects', 'technology' ),
                 'hierarchical'          => true,
                 'public'                => true,
                 'show_ui'               => true,
@@ -154,7 +154,7 @@ class ProjectsBlock {
             }
 
             // Register Custom Taxonomy
-        function technology_tags() 
+        public function technology_tags() 
         {
 
             $labels = array(
@@ -179,11 +179,7 @@ class ProjectsBlock {
                 'items_list'                 => __( 'Technologies list', 'understrap' ),
                 'items_list_navigation'      => __( 'Technologieslist navigation', 'understrap' ),
             );
-            $rewrite = array(
-                'slug'                       => 'technology',
-                'with_front'                 => true,
-                'hierarchical'               => false,
-            );
+            
             $args = array(
                 'labels'                     => $labels,
                 'hierarchical'               => false,
@@ -192,7 +188,6 @@ class ProjectsBlock {
                 'show_admin_column'          => true,
                 'show_in_nav_menus'          => true,
                 'show_tagcloud'              => true,
-                'rewrite'                    => $rewrite,
             );
             register_taxonomy( 'technology', array( 'post_projects' ), $args );
 

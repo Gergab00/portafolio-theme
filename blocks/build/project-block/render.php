@@ -33,19 +33,19 @@ $query = new WP_Query( $args );
 if ($query->have_posts()):
     while ($query->have_posts()):
         $query->the_post();
-        $move = 2;
+        $move = 0;
         $colors = array(
             array('bg-white','text-dark','bg-secondary'),
             array('bg-info','text-light','bg-primary'),
             array('bg-dark','text-light','bg-primary'),
         );
-        if($wp_query->current_post == 2) $i++;
+        if($wp_query->current_post == 2) $move++;
         $mod = ($wp_query->current_post + $move) % 3;
     ?>
     <div class="col-md-4 col-sm-6">
         <div class="card project shadow-regular <?php echo $colors[$mod][0]; ?>">
             <div class="card image shadow-regular w-75 mx-auto mt-n80">
-              <?php the_post_thumbnail( 'medium', array('class' => 'card-img') ); ?>
+              <?php the_post_thumbnail( '280-230', array('class' => 'card-img') ); ?>
               <div class="card-img-overlay <?php echo $colors[$mod][2]; ?> opacity-25">
               </div>
             </div>

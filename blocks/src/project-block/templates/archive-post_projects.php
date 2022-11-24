@@ -41,7 +41,7 @@ if (have_posts()):
     <div class="col-md-4 col-sm-6">
         <div class="card project shadow-regular <?php echo $colors[$mod][0]; ?>">
             <div class="card image shadow-regular w-75 mx-auto mt-n80">
-              <?php the_post_thumbnail( 'medium', array('class' => 'card-img') ); ?>
+              <?php the_post_thumbnail( '280-230', array('class' => 'card-img') ); ?>
               <div class="card-img-overlay <?php echo $colors[$mod][2]; ?> opacity-25">
               </div>
             </div>
