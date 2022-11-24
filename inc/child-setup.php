@@ -27,3 +27,5 @@ register_nav_menus(
         'resources' => __( 'Resources Menu', 'understrap' ),
     )
 );
+
+add_theme_support( 'yoast-seo-breadcrumbs' );

@@ -204,7 +204,7 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 $atts['data-bs-toggle'] = 'dropdown';
                 $atts['aria-haspopup'] = 'true';
                 $atts['aria-expanded'] = 'false';
-                $atts['class'] = 'dropdown-toggle nav-link fs-34 text-info underline-info pb-0 mb-2';
+                $atts['class'] = 'dropdown-toggle nav-link fs-34 text-light underline-light pb-0 mb-2';
                 $atts['id'] = 'menu-item-dropdown-' . $item->ID;
             } else {
                 $atts['href'] = !empty($item->url) ? $item->url : '#';
@@ -212,9 +212,9 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 if ($depth > 0) {
                     $atts['class'] = 'dropdown-item';
                 } else if(in_array($args->theme_location, array('about', 'resources'))) {
-                    $atts['class'] = 'fs-20 text-info text-decoration-none';
+                    $atts['class'] = 'fs-20 text-light text-decoration-none';
                 } else {
-                    $atts['class'] = 'nav-link fs-34 text-info underline-info pb-0 mb-2';
+                    $atts['class'] = 'nav-link fs-34 text-light underline-light pb-0 mb-2';
                 }
             }
 
@@ -251,10 +251,10 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
                 // is linkmod, output the required element opener.
                 $item_output .= self::linkmod_element_open($linkmod_type, $attributes);
             } else if( in_array($args->theme_location, array('about', 'resources')) ) {
-                $item_output .= '<a' . $attributes . '><span class="text-info"> # </span>';
+                $item_output .= '<a' . $attributes . '><span class="text-light"> # </span>';
             } else {
                 // With no link mod type set this must be a standard <a> tag.
-                $item_output .= '<a' . $attributes . '><span class="text-info"> < </span>';
+                $item_output .= '<a' . $attributes . '><span class="text-light"> < </span>';
             }
 
             /**
@@ -309,7 +309,7 @@ if (!class_exists('Understrap_WP_Bootstrap_Navwalker')) {
         
             } else {
                 // With no link mod type set this must be a standard <a> tag.
-                $item_output .= '<span class="text-info"> /> </span></a>';
+                $item_output .= '<span class="text-light"> /> </span></a>';
             }
 
             $item_output .= isset($args->after) ? $args->after : '';

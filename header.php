@@ -89,13 +89,13 @@ $phone		= get_option( '_phone_number' );
                                 <i class="fa-solid fa-bars text-light"></i>
                             </button>
 
-                            <div class="offcanvas offcanvas-end bg-dark backdrop-filter-5" tabindex="-1"
+                            <div class="offcanvas offcanvas-end bg-primary backdrop-filter-5" tabindex="-1"
                                 id="navbarNavOffcanvas">
 
 
                                 <div class="row vh-100">
                                     <div
-                                        class="col-md-8 col-sm-6 bg-dark opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
+                                        class="col-md-8 col-sm-6 bg-primary opacity-75 shadow-right-offcanvas d-flex justify-content-center align-items-center">
                                         <!-- Your site title as branding in the menu -->
                                         <?php if ( ! has_custom_logo() ) { ?>
 
@@ -121,12 +121,12 @@ $phone		= get_option( '_phone_number' );
                         ?>
                                         <!-- end custom logo -->
                                     </div>
-                                    <div class="col-md-4 col-sm-6 bg-white shadow-left-offcanvas">
+                                    <div class="col-md-4 col-sm-6 bg-dark shadow-left-offcanvas">
                                         <div class="offcanvas-header justify-content-end">
                                             <button type="button"
                                                 class="btn-close bg-transparent mt-md-100 mt-sm-50 mt-25 mx-auto"
                                                 data-bs-dismiss="offcanvas" aria-label="Close">
-                                                <i class="fa-solid fa-xmark text-dark fs-34"></i>
+                                                <i class="fa-solid fa-xmark text-light fs-34"></i>
                                             </button>
                                         </div><!-- .offcanvas-header -->
                                         <!-- The WordPress Menu goes here -->
