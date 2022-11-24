@@ -17,6 +17,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // 5. Include remainder of required parts
 @import "assets/bootstrap5/maps";
 @import "assets/bootstrap5/mixins";
+@import "theme/child_theme_mixins"; //<------------------- Necessary and useful mixins for the theme
 @import "assets/bootstrap5/root";
 
 // 6. Optionally include any other parts as needed
@@ -66,6 +67,5 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 //@import "icomoon/icomoon.scss"; // <------- Custom Icomoon Icon font
 
 // Any additional imported files //
-@import "theme/child_theme_mixins"; //<------------------- Necessary and useful mixins for the theme
 @import "theme/child_theme"; // <------- Add your styles into this fil
 //@import "assets/animate/animate";

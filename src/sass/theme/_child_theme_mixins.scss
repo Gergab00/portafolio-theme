@@ -72,4 +72,23 @@
     }
   }
 
+  @mixin list-group-item-variant($state, $background, $color) {
+    .list-group-item-#{$state} {
+      color: $background;
+      background-color: $color;
   
+      &.list-group-item-action {
+        &:hover,
+        &:focus {
+          color: $color;
+          background-color: shade-color($background, 10%);
+        }
+  
+        &.active {
+          color: $white;
+          background-color: $color;
+          border-color: $color;
+        }
+      }
+    }
+  }

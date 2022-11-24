@@ -104,10 +104,11 @@ $utilities: map-merge(
 			property: box-shadow,
 			class: shadow,
 			values: (
-				left-offcanvas: inset 0px 0px 50px rgba(18, 17, 39, 0.5),
-				right-offcanvas: inset -50px 0px 50px 0px rgba(0, 0, 0, 0.5),
+				left-offcanvas: inset 0px 0px 50px rgba($dark, 0.5),
+				right-offcanvas: inset -50px 0px 50px 0px rgba($dark, 0.5),
         top: inset 0px 50px 50px 0px,
-        bottom: inset 0px -50px 50px 0px,
+        bottom: 0px 10px 25px 10px rgba($dark,0.1),
+        regular: 0 .5rem 1rem rgba($dark, .5),
 				none: none,
 			),
 		),
@@ -134,12 +135,12 @@ $utilities: map-merge(
         parallelogram: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%),
 			),
 		),
-    "text-opacity": (
+    "border-radius": (
       css-var: true,
       css-variable-name: border-radius,
       class: border-radius,
       values: (
-        30: 30%,
+        10: 10px
       )
     ),
 	)

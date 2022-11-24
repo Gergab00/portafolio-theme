@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 Mx_Metaboxes_Uploader_Class::register_scrips();
 
+
 // add text input
 new Mx_Metaboxes_Class(
 	[
@@ -108,6 +109,16 @@ new Mx_Metaboxes_Class(
 		'metabox_type'	=> 'image'
 	]
 );
+
+/* new Mx_Metaboxes_Class(
+	[
+		'id'			=> 'header_image',
+		'post_types' 	=> 'post_projects',
+		'name'			=> esc_html( 'Header image', 'understrap' ),
+		'metabox_type'	=> 'image',
+		'context' 		=> 'side',
+	]
+); */
 
 // video upload
 new Mx_Metaboxes_Class(

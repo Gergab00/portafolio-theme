@@ -5,19 +5,41 @@
 @use "sass:map";
 
 //Your custom colors
-$primary:#89F7F6;
+/* $primary:#89F7F6;
 $secondary:#F69A71;
 $success:#FEFCFF;
 $info:#656476;
-$danger:#2C293C;
+$danger:#2C293C; */
+
+/* $primary:       #9a9ab0;//*Santas Gray
+$secondary:     #5F71D3;//*Indigo
+$success:       #63a96d;//Aqua Forest
+$info:          #101c79;//*Deep Koamaru
+$warning:       #e19935;//Fire Bush
+$danger:        #f44336;//Pomegranate
+$accent:        #B36B00;//*INDOCHINE
+$light:         #F6F3EF;//*SPRING WOOD
+$dark:          #0C134A; */
+
+$primary:       #5ba7c7;//Main brand color - FOUNTAIN BLUE
+$secondary:     #877068;//Light accent - SAND DUNE
+$success:       #51ad74;//Aqua Forest
+$info:          #A44073;//Dark accent - ROUGE
+$warning:       #ce9d3c;//Old Gold
+$danger:        #f44336;//Pomegranate
+$light:         #F7E7E8;//Light shades - POT POURRI
+$dark:          #131885;//Dark shades - GOVERNOR BAY
 
 // scss-docs-start custom-colors-map
 $custom-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "danger": $danger,
+    "primary":      $primary,
+    "secondary":    $secondary,
+    "success":      $success,
+    "info":         $info,
+    "warning":      $warning,
+    "danger":       $danger,
+    "light":        $light,
+    "dark":         $dark,
 );
 
 // scss-docs-end theme-colors-map
@@ -46,6 +68,7 @@ $max-width: (
     100vh: 100vh,
     100: 100%,
     1200: 1200px,
+    640: 640px,
     );
     
 $spacer: 1rem;
@@ -53,6 +76,7 @@ $spacers: (
     auto:auto,
     try: $spacer * 1,
     120: $spacer * 7.5,
+    160: $spacer * 10,
 );
     
 $n: 0;
@@ -152,6 +176,7 @@ $fonts-family: (
 );
 
 $font-sizes: (
+    12: 0.75rem,
     16: 1rem,
     20: 1.25rem,
     24: 1.5rem,

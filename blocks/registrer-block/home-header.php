@@ -35,4 +35,5 @@ class HomeHeader {
 
 }
 
-HomeHeader::init();
+$HomeHeader = new HomeHeader;
+$HomeHeader->init();
