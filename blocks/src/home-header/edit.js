@@ -96,6 +96,31 @@ export default function Edit( { attributes, setAttributes } ) {
 						) }
 					/>
 				</PanelBody>
+				<PanelBody title={ 'Image Background' } opened={ opened }>
+					<MediaUpload
+						onSelect={ ( media_bg ) => {
+							console.log( 'selected ' + media_bg.length );
+							console.table( media_bg );
+							setAttributes( {
+								media_bg,
+							} );
+						} }
+						allowedTypes={ ALLOWED_MEDIA_TYPES }
+						render={ ( { open } ) => (
+							<PanelRow className="media" initialOpen={ false }>
+								<Button onClick={ open }>
+									{ typeof attributes.media_bg.url ==
+										'undefined' ||
+									attributes.media_bg.url == '' ? (
+										'Open Media Library'
+									) : (
+										<img src={ attributes.media_bg.url } />
+									) }
+								</Button>
+							</PanelRow>
+						) }
+					/>
+				</PanelBody>
 				<PanelBody title={ 'Button' } opened={ opened }>
 					<RichText
 						tagName="a"

@@ -111,6 +111,31 @@ function Edit(_ref) {
       })));
     }
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: 'Image Background',
+    opened: opened
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media_bg => {
+      console.log('selected ' + media_bg.length);
+      console.table(media_bg);
+      setAttributes({
+        media_bg
+      });
+    },
+    allowedTypes: ALLOWED_MEDIA_TYPES,
+    render: _ref3 => {
+      let {
+        open
+      } = _ref3;
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
+        className: "media",
+        initialOpen: false
+      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+        onClick: open
+      }, typeof attributes.media_bg.url == 'undefined' || attributes.media_bg.url == '' ? 'Open Media Library' : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+        src: attributes.media_bg.url
+      })));
+    }
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: 'Button',
     opened: opened
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
@@ -291,7 +316,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"portafolio-theme/home-header","category":"theme","version":"0.9.0","title":"Home Header","icon":"block-default","description":"Block to modify the home header.","attributes":{"title":{"type":"string"},"media":{"type":"object","default":{"url":"","id":0}},"text_btn":{"type":"string"},"post":{"type":"object"}},"supports":{},"textdomain":"portafolio-theme","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"portafolio-theme/home-header","category":"theme","version":"0.9.0","title":"Home Header","icon":"block-default","description":"Block to modify the home header.","attributes":{"title":{"type":"string"},"media":{"type":"object","default":{"url":"","id":0}},"media_bg":{"type":"object","default":{"url":"","id":0}},"text_btn":{"type":"string"},"post":{"type":"object"}},"supports":{},"textdomain":"portafolio-theme","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

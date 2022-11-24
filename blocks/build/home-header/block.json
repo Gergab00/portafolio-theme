@@ -18,6 +18,13 @@
         "id": 0
       }
     },
+    "media_bg": {
+      "type": "object",
+      "default": {
+        "url": "",
+        "id": 0
+      }
+    },
     "text_btn": {
       "type": "string"
     },
