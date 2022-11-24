@@ -165,10 +165,13 @@ class ProjectsBlock {
 
             public static function the_category_projects()
             {   
+                $terms = get_the_terms( get_the_ID(), 'category_projects' );
                 $outHTML = '';
-                foreach ( get_the_terms( get_the_ID(), 'category_projects' ) as $tax ) {
-                    $outHTML .= '<span class="me-16 fs-12 text-muted">' . __( $tax->name ) . '</span>';
-                }
+                if($terms):
+                    foreach ( $terms as $tax ) {
+                        $outHTML .= '<span class="me-16 fs-12 text-muted">' . __( $tax->name ) . '</span>';
+                    }
+                endif;
                 echo $outHTML;
             }
 
