@@ -18,7 +18,8 @@ extract( $attributes );
 
 <section <?php echo get_block_wrapper_attributes(
     [
-        'class' => 'container-fluid d-flex flex-column justify-content-center align-items-center px-0 py-64 mx-auto bg-dark bg-gradient-center-primary position-relative']); ?>
+    'class' => 'container-fluid d-flex flex-column justify-content-center align-items-center px-0 py-64 mx-auto bg-dark bg-gradient-center-primary position-relative overflow-hidden'
+    ]); ?>
     data-block="about-block">
     <?php
 		AboutBlock::theBlockContent($block->parsed_block['innerBlocks'][0]);
