@@ -30,8 +30,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-	
+export default function Edit( { attributes, setAttributes } ) {
 	const bodyTitle = 'My Block Settings';
 	const opened = true;
 
@@ -40,7 +39,10 @@ export default function Edit({attributes, setAttributes}) {
 			<Panel header="Table of Content">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-						{ __( 'Table of Content, in this part show the table that create automatically, with the H tags!', 'portafolio-theme' ) }
+						{ __(
+							'Table of Content, in this part show the table that create automatically, with the H tags!',
+							'portafolio-theme'
+						) }
 					</PanelRow>
 				</PanelBody>
 			</Panel>

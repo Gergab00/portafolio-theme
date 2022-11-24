@@ -11,14 +11,24 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText, InnerBlocks, MediaUpload, __experimentalLinkControl as LinkControl, } from '@wordpress/block-editor';
-import { Panel, PanelBody, PanelRow, Button, BaseControl, } from '@wordpress/components';
+import {
+	useBlockProps,
+	RichText,
+	InnerBlocks,
+	MediaUpload,
+	__experimentalLinkControl as LinkControl,
+} from '@wordpress/block-editor';
+import {
+	Panel,
+	PanelBody,
+	PanelRow,
+	Button,
+	BaseControl,
+} from '@wordpress/components';
 
-const ALLOWED_MEDIA_TYPES = ['image'];
-const ALLOWED_BLOCKS = ['core/list', 'core/paragraph'];
-const TEMPLATE = [
-    [ 'core/paragraph', { placeholder: 'Description' } ]
-];
+const ALLOWED_MEDIA_TYPES = [ 'image' ];
+const ALLOWED_BLOCKS = [ 'core/list', 'core/paragraph' ];
+const TEMPLATE = [ [ 'core/paragraph', { placeholder: 'Description' } ] ];
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -36,30 +46,32 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-
+export default function Edit( { attributes, setAttributes } ) {
 	const bodyTitle = 'Title - Description';
 	const opened = true;
 
 	return (
-		<div {...useBlockProps()}>
+		<div { ...useBlockProps() }>
 			<Panel header="Home Header">
-				<PanelBody title={bodyTitle} opened={opened}>
+				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
 						<RichText
 							tagName="h1" // The tag here is the element output and editable in the admin
-							value={attributes.title} // Any existing content, either from the database or an attribute default
+							value={ attributes.title } // Any existing content, either from the database or an attribute default
 							onChange={ ( newVal ) => {
 								setAttributes( { title: newVal } );
 							} }
-							placeholder='Title of The Heading...'
+							placeholder="Title of The Heading..."
 						/>
 					</PanelRow>
 					<PanelRow>
-						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } />
+						<InnerBlocks
+							allowedBlocks={ ALLOWED_BLOCKS }
+							template={ TEMPLATE }
+						/>
 					</PanelRow>
 				</PanelBody>
-				<PanelBody title={'Image'} opened={opened}>
+				<PanelBody title={ 'Image' } opened={ opened }>
 					<MediaUpload
 						onSelect={ ( media ) => {
 							console.log( 'selected ' + media.length );
@@ -84,55 +96,55 @@ export default function Edit({attributes, setAttributes}) {
 						) }
 					/>
 				</PanelBody>
-				<PanelBody title={'Button'} opened={opened}>
-				<RichText
-								tagName="a"
-								className="btn btn-secondary"
-								value={ attributes.text_btn }
-								onChange={ ( newVal ) => {
-									setAttributes( { text_btn: newVal } );
-								} }
-								placeholder="The Text of the Button Goes Here"
-							/>
-							<BaseControl
-								__nextHasNoMarginBottom
-								label="Configure the link and the opening of the button"
-								help="Use this option to enable the opening of a popup, in the HREF you will have to put the ID of the element to open"
-							>
-								<LinkControl
-									searchInputPlaceholder="Search here..."
-									value={ attributes.post }
-									settings={ [
-										{
-											id: 'opensInNewTab',
-											title: 'Open in new tab',
-										},
-									] }
-									onChange={ ( newPost ) => {
-										console.log(
-											`The selected item URL: ${ newPost.url }.`
-										);
-										setAttributes( {
-											post: newPost,
-										} );
-									} }
-									withCreateSuggestion={ true }
-									createSuggestion={ ( inputValue ) =>
-										setAttributes( {
-											post: {
-												...attributes.post,
-												title: inputValue,
-												type: 'custom-url',
-												id: Date.now(),
-												url: inputValue,
-											},
-										} )
-									}
-									createSuggestionButtonText={ ( newValue ) =>
-										`${ __( 'New:' ) } ${ newValue }`
-									}
-								></LinkControl>
-							</BaseControl>
+				<PanelBody title={ 'Button' } opened={ opened }>
+					<RichText
+						tagName="a"
+						className="btn btn-secondary"
+						value={ attributes.text_btn }
+						onChange={ ( newVal ) => {
+							setAttributes( { text_btn: newVal } );
+						} }
+						placeholder="The Text of the Button Goes Here"
+					/>
+					<BaseControl
+						__nextHasNoMarginBottom
+						label="Configure the link and the opening of the button"
+						help="Use this option to enable the opening of a popup, in the HREF you will have to put the ID of the element to open"
+					>
+						<LinkControl
+							searchInputPlaceholder="Search here..."
+							value={ attributes.post }
+							settings={ [
+								{
+									id: 'opensInNewTab',
+									title: 'Open in new tab',
+								},
+							] }
+							onChange={ ( newPost ) => {
+								console.log(
+									`The selected item URL: ${ newPost.url }.`
+								);
+								setAttributes( {
+									post: newPost,
+								} );
+							} }
+							withCreateSuggestion={ true }
+							createSuggestion={ ( inputValue ) =>
+								setAttributes( {
+									post: {
+										...attributes.post,
+										title: inputValue,
+										type: 'custom-url',
+										id: Date.now(),
+										url: inputValue,
+									},
+								} )
+							}
+							createSuggestionButtonText={ ( newValue ) =>
+								`${ __( 'New:' ) } ${ newValue }`
+							}
+						></LinkControl>
+					</BaseControl>
 				</PanelBody>
 			</Panel>
 		</div>

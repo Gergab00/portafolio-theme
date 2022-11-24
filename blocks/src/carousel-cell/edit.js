@@ -14,11 +14,14 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { Panel, PanelBody, PanelRow } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = ['core/image', 'core/heading'];
+const ALLOWED_BLOCKS = [ 'core/image', 'core/heading' ];
 const TEMPLATE = [
-    [ 'core/heading', { placeholder: 'Title', level:3 } ],
-    [ 'core/image', {url:'https://picsum.photos/200/300', height:300, width:200} ],
-    [ 'core/heading', { placeholder: 'Subtitle', level:4} ],
+	[ 'core/heading', { placeholder: 'Title', level: 3 } ],
+	[
+		'core/image',
+		{ url: 'https://picsum.photos/200/300', height: 300, width: 200 },
+	],
+	[ 'core/heading', { placeholder: 'Subtitle', level: 4 } ],
 ];
 
 /**
@@ -37,9 +40,8 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-	
-//	console.table('attr: ', attributes);
+export default function Edit( { attributes, setAttributes } ) {
+	//	console.table('attr: ', attributes);
 
 	const bodyTitle = 'My Block Settings';
 	const opened = true;
@@ -49,7 +51,11 @@ export default function Edit({attributes, setAttributes}) {
 			<Panel header="Carousel Cell">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } templateLock="insert" />
+						<InnerBlocks
+							allowedBlocks={ ALLOWED_BLOCKS }
+							template={ TEMPLATE }
+							templateLock="insert"
+						/>
 					</PanelRow>
 				</PanelBody>
 			</Panel>

@@ -14,16 +14,40 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { Panel, PanelBody, PanelRow } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = ['core/columns','core/column', 'core/heading', 'core/paragraph', 'core/list'];
+const ALLOWED_BLOCKS = [
+	'core/columns',
+	'core/column',
+	'core/heading',
+	'core/paragraph',
+	'core/list',
+];
 const TEMPLATE = [
-	['core/columns', { className: 'row w-100'}, [
-		['core/column', { className: 'col-sm-4 d-flex align-items-center'}, [
-			['core/heading', {level: 2, className:'fs-54 text-success', placeholder: 'Enter your Title...',  content: 'About Me'}]
-		]],
-		['core/column', { className: 'col-sm-8 text-success'}, [
-			['core/paragraph', {}]
-		]]
-	]],
+	[
+		'core/columns',
+		{ className: 'row w-100' },
+		[
+			[
+				'core/column',
+				{ className: 'col-sm-4 d-flex align-items-center' },
+				[
+					[
+						'core/heading',
+						{
+							level: 2,
+							className: 'fs-54 text-success',
+							placeholder: 'Enter your Title...',
+							content: 'About Me',
+						},
+					],
+				],
+			],
+			[
+				'core/column',
+				{ className: 'col-sm-8 text-success' },
+				[ [ 'core/paragraph', {} ] ],
+			],
+		],
+	],
 ];
 
 /**
@@ -42,8 +66,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-	
+export default function Edit( { attributes, setAttributes } ) {
 	//console.trace(JSON.stringify(attributes));
 
 	const bodyTitle = 'My Block Settings';
@@ -54,7 +77,11 @@ export default function Edit({attributes, setAttributes}) {
 			<Panel header="About Block">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-					<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } />;
+						<InnerBlocks
+							allowedBlocks={ ALLOWED_BLOCKS }
+							template={ TEMPLATE }
+						/>
+						;
 					</PanelRow>
 				</PanelBody>
 			</Panel>

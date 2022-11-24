@@ -8,8 +8,8 @@
 	"icon": "block-default",
 	"description": "Block to modify the home header.",
 	"attributes": {
-		"title":{
-			"type":"string"
+		"title": {
+			"type": "string"
 		},
 		"media": {
 			"type": "object",

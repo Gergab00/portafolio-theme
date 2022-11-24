@@ -8,8 +8,7 @@
 	"icon": "block-default",
 	"description": "Wordpress theme to create your portfolio and web CV, it is made with the Understrap Framework.",
 	"attributes": {},
-	"supports": {
-	},
+	"supports": {},
 	"textdomain": "portafolio-theme",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

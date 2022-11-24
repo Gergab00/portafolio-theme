@@ -3,125 +3,128 @@
  * enable asNavFor for Flickity
  */
 
-( function( window, factory ) {
-  // universal module definition
-  if ( typeof module == 'object' && module.exports ) {
-    // CommonJS
-    module.exports = factory(
-        require('flickity'),
-        require('fizzy-ui-utils'),
-    );
-  } else {
-    // browser global
-    window.Flickity = factory(
-        window.Flickity,
-        window.fizzyUIUtils,
-    );
-  }
+( function ( window, factory ) {
+	// universal module definition
+	if ( typeof module == 'object' && module.exports ) {
+		// CommonJS
+		module.exports = factory(
+			require( 'flickity' ),
+			require( 'fizzy-ui-utils' )
+		);
+	} else {
+		// browser global
+		window.Flickity = factory( window.Flickity, window.fizzyUIUtils );
+	}
+} )( window, function factory( Flickity, utils ) {
+	// -------------------------- asNavFor prototype -------------------------- //
 
-}( window, function factory( Flickity, utils ) {
+	// Flickity.defaults.asNavFor = null;
 
-// -------------------------- asNavFor prototype -------------------------- //
+	Flickity.create.asNavFor = function () {
+		this.on( 'activate', this.activateAsNavFor );
+		this.on( 'deactivate', this.deactivateAsNavFor );
+		this.on( 'destroy', this.destroyAsNavFor );
 
-// Flickity.defaults.asNavFor = null;
+		let asNavForOption = this.options.asNavFor;
+		if ( ! asNavForOption ) return;
 
-Flickity.create.asNavFor = function() {
-  this.on( 'activate', this.activateAsNavFor );
-  this.on( 'deactivate', this.deactivateAsNavFor );
-  this.on( 'destroy', this.destroyAsNavFor );
+		// HACK do async, give time for other flickity to be initalized
+		setTimeout( () => {
+			this.setNavCompanion( asNavForOption );
+		} );
+	};
 
-  let asNavForOption = this.options.asNavFor;
-  if ( !asNavForOption ) return;
+	let proto = Flickity.prototype;
 
-  // HACK do async, give time for other flickity to be initalized
-  setTimeout( () => {
-    this.setNavCompanion( asNavForOption );
-  } );
-};
+	proto.setNavCompanion = function ( elem ) {
+		elem = utils.getQueryElement( elem );
+		let companion = Flickity.data( elem );
+		// stop if no companion or companion is self
+		if ( ! companion || companion === this ) return;
 
-let proto = Flickity.prototype;
+		this.navCompanion = companion;
+		// companion select
+		this.onNavCompanionSelect = () => {
+			this.navCompanionSelect();
+		};
+		companion.on( 'select', this.onNavCompanionSelect );
+		// click
+		this.on( 'staticClick', this.onNavStaticClick );
 
-proto.setNavCompanion = function( elem ) {
-  elem = utils.getQueryElement( elem );
-  let companion = Flickity.data( elem );
-  // stop if no companion or companion is self
-  if ( !companion || companion === this ) return;
+		this.navCompanionSelect( true );
+	};
 
-  this.navCompanion = companion;
-  // companion select
-  this.onNavCompanionSelect = () => {
-    this.navCompanionSelect();
-  };
-  companion.on( 'select', this.onNavCompanionSelect );
-  // click
-  this.on( 'staticClick', this.onNavStaticClick );
+	proto.navCompanionSelect = function ( isInstant ) {
+		// wait for companion & selectedCells first. #8
+		let companionCells =
+			this.navCompanion && this.navCompanion.selectedCells;
+		if ( ! companionCells ) return;
 
-  this.navCompanionSelect( true );
-};
+		// select slide that matches first cell of slide
+		let selectedCell = companionCells[ 0 ];
+		let firstIndex = this.navCompanion.cells.indexOf( selectedCell );
+		let lastIndex = firstIndex + companionCells.length - 1;
+		let selectIndex = Math.floor(
+			lerp( firstIndex, lastIndex, this.navCompanion.cellAlign )
+		);
+		this.selectCell( selectIndex, false, isInstant );
+		// set nav selected class
+		this.removeNavSelectedElements();
+		// stop if companion has more cells than this one
+		if ( selectIndex >= this.cells.length ) return;
 
-proto.navCompanionSelect = function( isInstant ) {
-  // wait for companion & selectedCells first. #8
-  let companionCells = this.navCompanion && this.navCompanion.selectedCells;
-  if ( !companionCells ) return;
+		let selectedCells = this.cells.slice( firstIndex, lastIndex + 1 );
+		this.navSelectedElements = selectedCells.map(
+			( cell ) => cell.element
+		);
+		this.changeNavSelectedClass( 'add' );
+	};
 
-  // select slide that matches first cell of slide
-  let selectedCell = companionCells[0];
-  let firstIndex = this.navCompanion.cells.indexOf( selectedCell );
-  let lastIndex = firstIndex + companionCells.length - 1;
-  let selectIndex = Math.floor( lerp( firstIndex, lastIndex,
-      this.navCompanion.cellAlign ) );
-  this.selectCell( selectIndex, false, isInstant );
-  // set nav selected class
-  this.removeNavSelectedElements();
-  // stop if companion has more cells than this one
-  if ( selectIndex >= this.cells.length ) return;
+	function lerp( a, b, t ) {
+		return ( b - a ) * t + a;
+	}
 
-  let selectedCells = this.cells.slice( firstIndex, lastIndex + 1 );
-  this.navSelectedElements = selectedCells.map( ( cell ) => cell.element );
-  this.changeNavSelectedClass('add');
-};
+	proto.changeNavSelectedClass = function ( method ) {
+		this.navSelectedElements.forEach( function ( navElem ) {
+			navElem.classList[ method ]( 'is-nav-selected' );
+		} );
+	};
 
-function lerp( a, b, t ) {
-  return ( b - a ) * t + a;
-}
+	proto.activateAsNavFor = function () {
+		this.navCompanionSelect( true );
+	};
 
-proto.changeNavSelectedClass = function( method ) {
-  this.navSelectedElements.forEach( function( navElem ) {
-    navElem.classList[ method ]('is-nav-selected');
-  } );
-};
+	proto.removeNavSelectedElements = function () {
+		if ( ! this.navSelectedElements ) return;
 
-proto.activateAsNavFor = function() {
-  this.navCompanionSelect( true );
-};
+		this.changeNavSelectedClass( 'remove' );
+		delete this.navSelectedElements;
+	};
 
-proto.removeNavSelectedElements = function() {
-  if ( !this.navSelectedElements ) return;
+	proto.onNavStaticClick = function (
+		event,
+		pointer,
+		cellElement,
+		cellIndex
+	) {
+		if ( typeof cellIndex == 'number' ) {
+			this.navCompanion.selectCell( cellIndex );
+		}
+	};
 
-  this.changeNavSelectedClass('remove');
-  delete this.navSelectedElements;
-};
+	proto.deactivateAsNavFor = function () {
+		this.removeNavSelectedElements();
+	};
 
-proto.onNavStaticClick = function( event, pointer, cellElement, cellIndex ) {
-  if ( typeof cellIndex == 'number' ) {
-    this.navCompanion.selectCell( cellIndex );
-  }
-};
+	proto.destroyAsNavFor = function () {
+		if ( ! this.navCompanion ) return;
 
-proto.deactivateAsNavFor = function() {
-  this.removeNavSelectedElements();
-};
+		this.navCompanion.off( 'select', this.onNavCompanionSelect );
+		this.off( 'staticClick', this.onNavStaticClick );
+		delete this.navCompanion;
+	};
 
-proto.destroyAsNavFor = function() {
-  if ( !this.navCompanion ) return;
+	// -----  ----- //
 
-  this.navCompanion.off( 'select', this.onNavCompanionSelect );
-  this.off( 'staticClick', this.onNavStaticClick );
-  delete this.navCompanion;
-};
-
-// -----  ----- //
-
-return Flickity;
-
-} ) );
+	return Flickity;
+} );

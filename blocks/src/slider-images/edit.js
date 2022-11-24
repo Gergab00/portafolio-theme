@@ -14,10 +14,8 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 import { Panel, PanelBody, PanelRow } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = ['portafolio-theme/carousel-cell'];
-const TEMPLATE = [
-    [ 'portafolio-theme/carousel-cell' ],
-];
+const ALLOWED_BLOCKS = [ 'portafolio-theme/carousel-cell' ];
+const TEMPLATE = [ [ 'portafolio-theme/carousel-cell' ] ];
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -35,8 +33,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes}) {
-	
+export default function Edit( { attributes, setAttributes } ) {
 	const bodyTitle = 'My Block Settings';
 	const opened = true;
 
@@ -45,7 +42,11 @@ export default function Edit({attributes, setAttributes}) {
 			<Panel header="Slider Images">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } />;
+						<InnerBlocks
+							allowedBlocks={ ALLOWED_BLOCKS }
+							template={ TEMPLATE }
+						/>
+						;
 					</PanelRow>
 				</PanelBody>
 			</Panel>

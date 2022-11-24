@@ -8,63 +8,63 @@
  * https://github.com/kallookoo/wp-color-picker-alpha
  * Licensed under the GPLv2 license or later.
  */
-( function( $ ) {
+( function ( $ ) {
 	// Prevent double-init.
 	if ( $.wp.wpColorPicker.prototype._hasAlpha ) {
 		return;
 	}
 
-		// Variable for some backgrounds ( grid )
-	var image   = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///4EDBxiAGMgCCCAGFB5AADGCRBgYDh48CCRZIJS9vT2QBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwDplz5uFJ3Z4gAAAABJRU5ErkJggg==',
+	// Variable for some backgrounds ( grid )
+	var image =
+			'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///4EDBxiAGMgCCCAGFB5AADGCRBgYDh48CCRZIJS9vT2QBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwDplz5uFJ3Z4gAAAABJRU5ErkJggg==',
 		// html stuff for wpColorPicker copy of the original color-picker.js
 		_after = '<div class="wp-picker-holder" />',
 		_wrap = '<div class="wp-picker-container" />',
 		_button = '<input type="button" class="button button-small" />',
-		_before = '<button type="button" class="button wp-color-result" aria-expanded="false"><span class="wp-color-result-text"></span></button>',
+		_before =
+			'<button type="button" class="button wp-color-result" aria-expanded="false"><span class="wp-color-result-text"></span></button>',
 		_wrappingLabel = '<label></label>',
 		_wrappingLabelText = '<span class="screen-reader-text"></span>',
 		_deprecated = false;
-		// Check if wpColorPickerL10n is defined
-		if ( typeof wpColorPickerL10n !== "undefined" ) {
-			// wpColorPickerL10n is defined in <= WordPress 5.4
-			// Prevent CSS issues in < WordPress 4.9. current can only be checked if we know wpColorPickerL10n is defined
-			_deprecated = ( typeof wpColorPickerL10n.current !== "undefined" );
-			if ( _deprecated ) {
-				// Update _before if wpColorPickerL10n.current is defined (< WP 4.9)
-				_before = '<a tabindex="0" class="wp-color-result" />';
-			}
-
-			var	_colorValue = wpColorPickerL10n.defaultLabel,
-				_selectColor = wpColorPickerL10n.pick,
-				_defaultString = wpColorPickerL10n.defaultString,
-				_defaultAriaLabel = wpColorPickerL10n.defaultAriaLabel,
-				_clearString = wpColorPickerL10n.clear,
-				_clearAriaLabel = wpColorPickerL10n.clearAriaLabel;
-		} else {
-			// wpColorPickerL10n is not defined in WordPress 5.5+
-			var __ = wp.i18n.__,
-				_colorValue = __( 'Color value' ),
-				_selectColor = __( 'Select Color' ),
-				_defaultString = __( 'Default' ),
-				_defaultAriaLabel = __( 'Select default color' ),
-				_clearString = __( 'Clear' ),
-				_clearAriaLabel = __( 'Clear color' );
+	// Check if wpColorPickerL10n is defined
+	if ( typeof wpColorPickerL10n !== 'undefined' ) {
+		// wpColorPickerL10n is defined in <= WordPress 5.4
+		// Prevent CSS issues in < WordPress 4.9. current can only be checked if we know wpColorPickerL10n is defined
+		_deprecated = typeof wpColorPickerL10n.current !== 'undefined';
+		if ( _deprecated ) {
+			// Update _before if wpColorPickerL10n.current is defined (< WP 4.9)
+			_before = '<a tabindex="0" class="wp-color-result" />';
 		}
+
+		var _colorValue = wpColorPickerL10n.defaultLabel,
+			_selectColor = wpColorPickerL10n.pick,
+			_defaultString = wpColorPickerL10n.defaultString,
+			_defaultAriaLabel = wpColorPickerL10n.defaultAriaLabel,
+			_clearString = wpColorPickerL10n.clear,
+			_clearAriaLabel = wpColorPickerL10n.clearAriaLabel;
+	} else {
+		// wpColorPickerL10n is not defined in WordPress 5.5+
+		var __ = wp.i18n.__,
+			_colorValue = __( 'Color value' ),
+			_selectColor = __( 'Select Color' ),
+			_defaultString = __( 'Default' ),
+			_defaultAriaLabel = __( 'Select default color' ),
+			_clearString = __( 'Clear' ),
+			_clearAriaLabel = __( 'Clear color' );
+	}
 	/**
 	 * Overwrite Color
 	 * for enable support rbga
 	 */
-	Color.fn.toString = function() {
+	Color.fn.toString = function () {
 		if ( this._alpha < 1 )
 			return this.toCSS( 'rgba', this._alpha ).replace( /\s+/g, '' );
 
 		var hex = parseInt( this._color, 10 ).toString( 16 );
 
-		if ( this.error )
-			return '';
+		if ( this.error ) return '';
 
-		if ( hex.length < 6 )
-			hex = ( '00000' + hex ).substr( -6 );
+		if ( hex.length < 6 ) hex = ( '00000' + hex ).substr( -6 );
 
 		return '#' + hex;
 	};
@@ -85,7 +85,7 @@
 		 *
 		 * @returns {void}
 		 */
-		_create: function() {
+		_create: function () {
 			// Return early if Iris support is missing.
 			if ( ! $.support.iris ) {
 				return;
@@ -112,14 +112,14 @@
 
 			if ( _deprecated ) {
 				el.hide().wrap( _wrap );
-				self.wrap            = el.parent();
-				self.toggler         = $( _before )
+				self.wrap = el.parent();
+				self.toggler = $( _before )
 					.insertBefore( el )
-					.css( { backgroundColor : self.initialValue } )
+					.css( { backgroundColor: self.initialValue } )
 					.attr( 'title', _selectColor )
 					.attr( 'data-current', wpColorPickerL10n.current );
 				self.pickerContainer = $( _after ).insertAfter( el );
-				self.button          = $( _button ).addClass('hidden');
+				self.button = $( _button ).addClass( 'hidden' );
 			} else {
 				/*
 				 * Check if there's already a wrapping label, e.g. in the Customizer.
@@ -149,16 +149,22 @@
 					.insertBefore( self.wrappingLabel )
 					.css( { backgroundColor: self.initialValue } );
 				// Set the toggle button span element text.
-				self.toggler.find( '.wp-color-result-text' ).text( _selectColor );
+				self.toggler
+					.find( '.wp-color-result-text' )
+					.text( _selectColor );
 				// Set up the Iris container and insert it after the wrapping label.
-				self.pickerContainer = $( _after ).insertAfter( self.wrappingLabel );
+				self.pickerContainer = $( _after ).insertAfter(
+					self.wrappingLabel
+				);
 				// Store a reference to the Clear/Default button.
 				self.button = $( _button );
 			}
 
 			// Set up the Clear/Default button.
 			if ( self.options.defaultColor ) {
-				self.button.addClass( 'wp-picker-default' ).val( _defaultString );
+				self.button
+					.addClass( 'wp-picker-default' )
+					.val( _defaultString );
 				if ( ! _deprecated ) {
 					self.button.attr( 'aria-label', _defaultAriaLabel );
 				}
@@ -170,7 +176,9 @@
 			}
 
 			if ( _deprecated ) {
-				el.wrap( '<span class="wp-picker-input-wrap" />' ).after( self.button );
+				el.wrap( '<span class="wp-picker-input-wrap" />' ).after(
+					self.button
+				);
 			} else {
 				// Wrap the wrapping label in its wrapper and append the Clear/Default button.
 				self.wrappingLabel
@@ -204,38 +212,47 @@
 				 *
 				 * @returns {void}
 				 */
-				change: function( event, ui ) {
+				change: function ( event, ui ) {
 					if ( self.options.alpha ) {
-						self.toggler.css( { 'background-image' : 'url(' + image + ')' } );
+						self.toggler.css( {
+							'background-image': 'url(' + image + ')',
+						} );
 						if ( _deprecated ) {
 							self.toggler.html( '<span class="color-alpha" />' );
 						} else {
 							self.toggler.css( {
-								'position' : 'relative'
+								position: 'relative',
 							} );
-							if ( self.toggler.find('span.color-alpha').length == 0 ) {
-								self.toggler.append('<span class="color-alpha" />');
+							if (
+								self.toggler.find( 'span.color-alpha' )
+									.length == 0
+							) {
+								self.toggler.append(
+									'<span class="color-alpha" />'
+								);
 							}
 						}
 
 						self.toggler.find( 'span.color-alpha' ).css( {
-							'width'                     : '30px',
-							'height'                    : '100%',
-							'position'                  : 'absolute',
-							'top'                       : 0,
-							'left'                      : 0,
-							'border-top-left-radius'    : '2px',
-							'border-bottom-left-radius' : '2px',
-							'background'                : ui.color.toString()
+							width: '30px',
+							height: '100%',
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							'border-top-left-radius': '2px',
+							'border-bottom-left-radius': '2px',
+							background: ui.color.toString(),
 						} );
 					} else {
-						self.toggler.css( { backgroundColor : ui.color.toString() } );
+						self.toggler.css( {
+							backgroundColor: ui.color.toString(),
+						} );
 					}
 
 					if ( $.isFunction( self.options.change ) ) {
 						self.options.change.call( this, event, ui );
 					}
-				}
+				},
 			} );
 
 			el.val( self.initialValue );
@@ -255,7 +272,7 @@
 		 *
 		 * @returns {void}
 		 */
-		_addListeners: function() {
+		_addListeners: function () {
 			var self = this;
 
 			/**
@@ -267,22 +284,22 @@
 			 *
 			 * @returs {void}
 			 */
-			self.wrap.on( 'click.wpcolorpicker', function( event ) {
+			self.wrap.on( 'click.wpcolorpicker', function ( event ) {
 				event.stopPropagation();
-			});
+			} );
 
 			/**
 			 * @summary Open or close the color picker depending on the class.
 			 *
 			 * @since 3.5
 			 */
-			self.toggler.click( function(){
+			self.toggler.click( function () {
 				if ( self.toggler.hasClass( 'wp-picker-open' ) ) {
 					self.close();
 				} else {
 					self.open();
 				}
-			});
+			} );
 
 			/**
 			 * @summary Checks if value is empty when changing the color in the color picker.
@@ -296,14 +313,19 @@
 			 *
 			 * @returns {void}
 			 */
-			self.element.on( 'change', function( event ) {
+			self.element.on( 'change', function ( event ) {
 				// Empty or Error = clear
-				if ( $( this ).val() === '' || self.element.hasClass( 'iris-error' ) ) {
+				if (
+					$( this ).val() === '' ||
+					self.element.hasClass( 'iris-error' )
+				) {
 					if ( self.options.alpha ) {
 						if ( _deprecated ) {
 							self.toggler.removeAttr( 'style' );
 						}
-						self.toggler.find( 'span.color-alpha' ).css( 'backgroundColor', '' );
+						self.toggler
+							.find( 'span.color-alpha' )
+							.css( 'backgroundColor', '' );
 					} else {
 						self.toggler.css( 'backgroundColor', '' );
 					}
@@ -325,14 +347,16 @@
 			 *
 			 * @returns {void}
 			 */
-			self.button.on( 'click', function( event ) {
+			self.button.on( 'click', function ( event ) {
 				if ( $( this ).hasClass( 'wp-picker-clear' ) ) {
 					self.element.val( '' );
 					if ( self.options.alpha ) {
 						if ( _deprecated ) {
 							self.toggler.removeAttr( 'style' );
 						}
-						self.toggler.find( 'span.color-alpha' ).css( 'backgroundColor', '' );
+						self.toggler
+							.find( 'span.color-alpha' )
+							.css( 'backgroundColor', '' );
 					} else {
 						self.toggler.css( 'backgroundColor', '' );
 					}
@@ -344,37 +368,43 @@
 				} else if ( $( this ).hasClass( 'wp-picker-default' ) ) {
 					self.element.val( self.options.defaultColor ).change();
 				}
-			});
+			} );
 		},
-	});
+	} );
 
 	/**
 	 * Overwrite iris
 	 */
 	$.widget( 'a8c.iris', $.a8c.iris, {
-		_create: function() {
+		_create: function () {
 			this._super();
 
 			// Global option for check is mode rbga is enabled
 			this.options.alpha = this.element.data( 'alpha' ) || false;
 
 			// Is not input disabled
-			if ( ! this.element.is( ':input' ) )
-				this.options.alpha = false;
+			if ( ! this.element.is( ':input' ) ) this.options.alpha = false;
 
-			if ( typeof this.options.alpha !== 'undefined' && this.options.alpha ) {
-				var self       = this,
-					el         = self.element,
-					_html      = '<div class="iris-strip iris-slider iris-alpha-slider"><div class="iris-slider-offset iris-slider-offset-alpha"></div></div>',
-					aContainer = $( _html ).appendTo( self.picker.find( '.iris-picker-inner' ) ),
-					aSlider    = aContainer.find( '.iris-slider-offset-alpha' ),
-					controls   = {
-						aContainer : aContainer,
-						aSlider    : aSlider
+			if (
+				typeof this.options.alpha !== 'undefined' &&
+				this.options.alpha
+			) {
+				var self = this,
+					el = self.element,
+					_html =
+						'<div class="iris-strip iris-slider iris-alpha-slider"><div class="iris-slider-offset iris-slider-offset-alpha"></div></div>',
+					aContainer = $( _html ).appendTo(
+						self.picker.find( '.iris-picker-inner' )
+					),
+					aSlider = aContainer.find( '.iris-slider-offset-alpha' ),
+					controls = {
+						aContainer: aContainer,
+						aSlider: aSlider,
 					};
 
 				if ( typeof el.data( 'custom-width' ) !== 'undefined' ) {
-					self.options.customWidth = parseInt( el.data( 'custom-width' ) ) || 0;
+					self.options.customWidth =
+						parseInt( el.data( 'custom-width' ) ) || 0;
 				} else {
 					self.options.customWidth = 100;
 				}
@@ -383,22 +413,32 @@
 				self.options.defaultWidth = el.width();
 
 				// Update width for input
-				if ( self._color._alpha < 1 || self._color.toString().indexOf('rgb') != -1 )
-					el.width( parseInt( self.options.defaultWidth + self.options.customWidth ) );
+				if (
+					self._color._alpha < 1 ||
+					self._color.toString().indexOf( 'rgb' ) != -1
+				)
+					el.width(
+						parseInt(
+							self.options.defaultWidth + self.options.customWidth
+						)
+					);
 
 				// Push new controls
-				$.each( controls, function( k, v ) {
-					self.controls[k] = v;
+				$.each( controls, function ( k, v ) {
+					self.controls[ k ] = v;
 				} );
 
 				// Change size strip and add margin for sliders
 				self.controls.square.css( { 'margin-right': '0' } );
-				var emptyWidth   = ( self.picker.width() - self.controls.square.width() - 20 ),
-					stripsMargin = ( emptyWidth / 6 ),
-					stripsWidth  = ( ( emptyWidth / 2 ) - stripsMargin );
+				var emptyWidth =
+						self.picker.width() - self.controls.square.width() - 20,
+					stripsMargin = emptyWidth / 6,
+					stripsWidth = emptyWidth / 2 - stripsMargin;
 
-				$.each( [ 'aContainer', 'strip' ], function( k, v ) {
-					self.controls[v].width( stripsWidth ).css( { 'margin-left' : stripsMargin + 'px' } );
+				$.each( [ 'aContainer', 'strip' ], function ( k, v ) {
+					self.controls[ v ]
+						.width( stripsWidth )
+						.css( { 'margin-left': stripsMargin + 'px' } );
 				} );
 
 				// Add new slider
@@ -408,47 +448,68 @@
 				self._change();
 			}
 		},
-		_initControls: function() {
+		_initControls: function () {
 			this._super();
 
 			if ( this.options.alpha ) {
-				var self     = this,
+				var self = this,
 					controls = self.controls;
 
-				controls.aSlider.slider({
-					orientation : 'vertical',
-					min         : 0,
-					max         : 100,
-					step        : 1,
-					value       : parseInt( self._color._alpha * 100 ),
-					slide       : function( event, ui ) {
+				controls.aSlider.slider( {
+					orientation: 'vertical',
+					min: 0,
+					max: 100,
+					step: 1,
+					value: parseInt( self._color._alpha * 100 ),
+					slide: function ( event, ui ) {
 						// Update alpha value
 						self._color._alpha = parseFloat( ui.value / 100 );
 						self._change.apply( self, arguments );
-					}
-				});
+					},
+				} );
 			}
 		},
-		_change: function() {
+		_change: function () {
 			this._super();
 
 			var self = this,
-				el   = self.element;
+				el = self.element;
 
 			if ( this.options.alpha ) {
-				var	controls     = self.controls,
-					alpha        = parseInt( self._color._alpha * 100 ),
-					color        = self._color.toRgb(),
-					gradient     = [
-						'rgb(' + color.r + ',' + color.g + ',' + color.b + ') 0%',
-						'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 0) 100%'
+				var controls = self.controls,
+					alpha = parseInt( self._color._alpha * 100 ),
+					color = self._color.toRgb(),
+					gradient = [
+						'rgb(' +
+							color.r +
+							',' +
+							color.g +
+							',' +
+							color.b +
+							') 0%',
+						'rgba(' +
+							color.r +
+							',' +
+							color.g +
+							',' +
+							color.b +
+							', 0) 100%',
 					],
 					defaultWidth = self.options.defaultWidth,
-					customWidth  = self.options.customWidth,
-					target       = self.picker.closest( '.wp-picker-container' ).find( '.wp-color-result' );
+					customWidth = self.options.customWidth,
+					target = self.picker
+						.closest( '.wp-picker-container' )
+						.find( '.wp-color-result' );
 
 				// Generate background slider alpha, only for CSS3 old browser fuck!! :)
-				controls.aContainer.css( { 'background' : 'linear-gradient(to bottom, ' + gradient.join( ', ' ) + '), url(' + image + ')' } );
+				controls.aContainer.css( {
+					background:
+						'linear-gradient(to bottom, ' +
+						gradient.join( ', ' ) +
+						'), url(' +
+						image +
+						')',
+				} );
 
 				if ( target.hasClass( 'wp-picker-open' ) ) {
 					// Update alpha value
@@ -459,7 +520,15 @@
 					 * and change input width for view all value
 					 */
 					if ( self._color._alpha < 1 ) {
-						controls.strip.attr( 'style', controls.strip.attr( 'style' ).replace( /rgba\(([0-9]+,)(\s+)?([0-9]+,)(\s+)?([0-9]+)(,(\s+)?[0-9\.]+)\)/g, 'rgb($1$3$5)' ) );
+						controls.strip.attr(
+							'style',
+							controls.strip
+								.attr( 'style' )
+								.replace(
+									/rgba\(([0-9]+,)(\s+)?([0-9]+,)(\s+)?([0-9]+)(,(\s+)?[0-9\.]+)\)/g,
+									'rgb($1$3$5)'
+								)
+						);
 						el.width( parseInt( defaultWidth + customWidth ) );
 					} else {
 						el.width( defaultWidth );
@@ -470,49 +539,57 @@
 			var reset = el.data( 'reset-alpha' ) || false;
 
 			if ( reset ) {
-				self.picker.find( '.iris-palette-container' ).on( 'click.palette', '.iris-palette', function() {
-					self._color._alpha = 1;
-					self.active        = 'external';
-					self._change();
-				} );
+				self.picker
+					.find( '.iris-palette-container' )
+					.on( 'click.palette', '.iris-palette', function () {
+						self._color._alpha = 1;
+						self.active = 'external';
+						self._change();
+					} );
 			}
 			el.trigger( 'change' );
 		},
-		_addInputListeners: function( input ) {
-			var self            = this,
+		_addInputListeners: function ( input ) {
+			var self = this,
 				debounceTimeout = 100,
-				callback        = function( event ) {
+				callback = function ( event ) {
 					var color = new Color( input.val() ),
-						val   = input.val();
+						val = input.val();
 
 					input.removeClass( 'iris-error' );
 					// we gave a bad color
 					if ( color.error ) {
 						// don't error on an empty input
-						if ( val !== '' )
-							input.addClass( 'iris-error' );
+						if ( val !== '' ) input.addClass( 'iris-error' );
 					} else {
 						if ( color.toString() !== self._color.toString() ) {
 							// let's not do this on keyup for hex shortcodes
-							if ( ! ( event.type === 'keyup' && val.match( /^[0-9a-fA-F]{3}$/ ) ) )
+							if (
+								! (
+									event.type === 'keyup' &&
+									val.match( /^[0-9a-fA-F]{3}$/ )
+								)
+							)
 								self._setOption( 'color', color.toString() );
 						}
 					}
 				};
 
-			input.on( 'change', callback ).on( 'keyup', self._debounce( callback, debounceTimeout ) );
+			input
+				.on( 'change', callback )
+				.on( 'keyup', self._debounce( callback, debounceTimeout ) );
 
 			// If we initialized hidden, show on first focus. The rest is up to you.
 			if ( self.options.hide ) {
-				input.on( 'focus', function() {
+				input.on( 'focus', function () {
 					self.show();
 				} );
 			}
-		}
+		},
 	} );
-}( jQuery ) );
+} )( jQuery );
 
 // Auto Call plugin is class is color-picker
-jQuery( document ).ready( function( $ ) {
+jQuery( document ).ready( function ( $ ) {
 	$( '.color-picker' ).wpColorPicker();
 } );
