@@ -16,7 +16,7 @@
 defined( 'ABSPATH' ) || exit;
 
 class ProjectsBlock {
-
+    
     /**
 	 * Constructor
 	 */
@@ -32,6 +32,7 @@ class ProjectsBlock {
         add_filter( 'single_template', array( get_called_class(), 'get_custom_post_type_template' ) );
         add_filter( 'archive_template', array( get_called_class(), 'get_custom_post_type_template' ) );
         add_filter( 'excerpt_more', array( get_called_class(), 'projects_excerpt_more' ));
+        add_action( 'init', array( get_called_class(), 'technology_tags'), 0 );
 	}
 
     
@@ -151,6 +152,51 @@ class ProjectsBlock {
                 register_taxonomy( 'category_projects', array( 'post_projects' ), $args );
             
             }
+
+            // Register Custom Taxonomy
+        function technology_tags() 
+        {
+
+            $labels = array(
+                'name'                       => _x( 'Technologies', 'Taxonomy General Name', 'understrap' ),
+                'singular_name'              => _x( 'Technology', 'Taxonomy Singular Name', 'understrap' ),
+                'menu_name'                  => __( 'Technology', 'understrap' ),
+                'all_items'                  => __( 'All Technologies', 'understrap' ),
+                'parent_item'                => __( 'Parent Technology', 'understrap' ),
+                'parent_item_colon'          => __( 'Parent Technology:', 'understrap' ),
+                'new_item_name'              => __( 'New Technology Name', 'understrap' ),
+                'add_new_item'               => __( 'Add New Technology', 'understrap' ),
+                'edit_item'                  => __( 'Edit Technology', 'understrap' ),
+                'update_item'                => __( 'Update Technology', 'understrap' ),
+                'view_item'                  => __( 'View Technology', 'understrap' ),
+                'separate_items_with_commas' => __( 'Separate Technologies with commas', 'understrap' ),
+                'add_or_remove_items'        => __( 'Add or remove Technologies', 'understrap' ),
+                'choose_from_most_used'      => __( 'Choose from the most used', 'understrap' ),
+                'popular_items'              => __( 'Popular Technologies', 'understrap' ),
+                'search_items'               => __( 'Search Technologies', 'understrap' ),
+                'not_found'                  => __( 'Not Found', 'understrap' ),
+                'no_terms'                   => __( 'No Technologies', 'understrap' ),
+                'items_list'                 => __( 'Technologies list', 'understrap' ),
+                'items_list_navigation'      => __( 'Technologieslist navigation', 'understrap' ),
+            );
+            $rewrite = array(
+                'slug'                       => 'technology',
+                'with_front'                 => true,
+                'hierarchical'               => false,
+            );
+            $args = array(
+                'labels'                     => $labels,
+                'hierarchical'               => false,
+                'public'                     => true,
+                'show_ui'                    => true,
+                'show_admin_column'          => true,
+                'show_in_nav_menus'          => true,
+                'show_tagcloud'              => true,
+                'rewrite'                    => $rewrite,
+            );
+            register_taxonomy( 'technology', array( 'post_projects' ), $args );
+
+        }
             
             public function get_custom_post_type_template( $template ) {
                 global $post;
