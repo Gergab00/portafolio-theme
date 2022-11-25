@@ -1,7 +1,7 @@
 //Mixins allow you to define styles that can be re-used throughout your stylesheet.
-
- /// Description Selector that matches the outer selector and an element selector.
- /// @see https://sass-lang.com/documentation/style-rules/parent-selector#adding-suffixes
+/// Description Selector that matches the outer selector and an element selector.
+/// @see https://sass-lang.com/documentation/style-rules/parent-selector#adding-suffixes
+@use "sass:selector";
 @mixin unify-parent($child) {
     @at-root #{selector.unify(&, $child)} {
       @content;

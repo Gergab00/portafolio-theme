@@ -218,7 +218,7 @@ class ProjectsBlock {
 
             public function projects_excerpt_more( $more ) 
             {
-                return sprintf( '... <a href="%1$s" class="btn btn-outline-primary my-32">%2$s</a>',
+                return sprintf( '...</p><p class="read-more"> <a href="%1$s" class="btn btn-outline-primary">%2$s</a>',
                       esc_url( get_permalink( get_the_ID() ) ),
                       sprintf( __( 'Continue reading %s', 'wpdocs' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
                 );

@@ -21,6 +21,7 @@ $args = array(
 
 // The Query
 $query = new WP_Query( $args );
+$move = 0;
 
 ?>
 
@@ -28,21 +29,20 @@ $query = new WP_Query( $args );
 <div class="row mw-1200 justify-content-center w-100 py-16">
     <h2 class="text-center text-dark"><?php echo $title; ?></h1>
 </div>
-<div class="row mw-1200 w-100 mt-80 pt-16 pb-32">
+<div class="row mw-1200 w-100 pt-16 pb-32">
 <?php   
 if ($query->have_posts()):
     while ($query->have_posts()):
         $query->the_post();
-        $move = 0;
         $colors = array(
             array('bg-white','text-dark','bg-secondary'),
             array('bg-info','text-light','bg-primary'),
             array('bg-dark','text-light','bg-primary'),
         );
-        if($wp_query->current_post == 2) $move++;
-        $mod = ($wp_query->current_post + $move) % 3;
+        $mod = ($query->current_post + $move) % 3;
+        if($query->current_post % 3 === 2) $move++;
     ?>
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-6 py-64">
         <div class="card project shadow-regular <?php echo $colors[$mod][0]; ?>">
             <div class="card image shadow-regular w-75 mx-auto mt-n80">
               <?php the_post_thumbnail( '280-230', array('class' => 'card-img') ); ?>
@@ -52,7 +52,9 @@ if ($query->have_posts()):
 
             <div class="card-body <?php echo $colors[$mod][1]; ?>">
                 <?php the_title( '<h2>', '</h2>' ); ?>
-                <?php ProjectsBlock::the_category_projects(); ?>
+                <div class="tags">
+                    <?php ProjectsBlock::the_category_projects(); ?>
+                </div>
                 <?php the_excerpt(); ?>
             </div>
         </div>

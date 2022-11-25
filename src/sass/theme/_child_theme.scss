@@ -4,6 +4,7 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
 //---------------------------------------------- FONT STYLES ----------------------------------------------//
 // Font Size 
 //Maybe you can use this styles ot maybe you want to modifu the bootstrap values
@@ -22,6 +23,7 @@
   --bs-btn-color: #{$light};
   --bs-btn-hover-color: #{$dark};
 }
+
 //---------------------------------------------- BUTTONS (END) ----------------------------------------//
 //---------------------------------------------- FORMS ----------------------------------------------//
 
@@ -29,18 +31,18 @@
 //---------------------------------------------- ICONS ----------------------------------------------//
 //You can make your own icons in https: //icomoon.io/app/#/select
 .moo {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -52,15 +54,18 @@
 
 //---------------------------------------------- MODAL (END) ----------------------------------------//
 //---------------------------------------------- NAVBAR ----------------------------------------------//
-.navbar-toggler{
+.navbar-toggler {
   border: none;
-  &:focus{
+
+  &:focus {
     box-shadow: none !important;
   }
 }
+
 //---------------------------------------------- NAVBAR (END) ----------------------------------------//
 //---------------------------------------------- OTHER ----------------------------------------------//
-@each $color, $value in $theme-colors {
+@each $color,
+$value in $theme-colors {
   a.underline-#{$color} {
     @include hover-underline(fade, 'center', 2px, $color: $value)
   }
@@ -68,19 +73,48 @@
 
 .social-link {
   transition: transform 600ms ease;
+
   &:hover {
     transform: scale(-1, 2);
   }
 }
 
 section {
-  p, ul, ol {
+
+  p,
+  ul,
+  ol {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  h2, h3, h4 {
+
+  h2,
+  h3,
+  h4 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .project {
+    p,
+    ul,
+    ol {
+      height: 200px;
+    }
+
+    p.read-more {
+      height: 50px;
+    }
+  
+    h2,
+    h3,
+    h4 {
+      height: 75px;
+    }
+    
+    .tags {
+      height: 50px;
+    }
   }
 }
 

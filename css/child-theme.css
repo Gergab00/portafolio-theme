@@ -56366,13 +56366,37 @@ a.underline-dark:hover::after {
   transform: scale(-1, 2);
 }
 
-section p, section ul, section ol {
+section p,
+section ul,
+section ol {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-section h2, section .h2, section h3, section .h3, section h4, section .h4 {
+section h2, section .h2,
+section h3,
+section .h3,
+section h4,
+section .h4 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+section .project p,
+section .project ul,
+section .project ol {
+  height: 200px;
+}
+section .project p.read-more {
+  height: 50px;
+}
+section .project h2, section .project .h2,
+section .project h3,
+section .project .h3,
+section .project h4,
+section .project .h4 {
+  height: 75px;
+}
+section .project .tags {
+  height: 50px;
 }
 
 /*# sourceMappingURL=child-theme.css.map */
