@@ -58198,6 +58198,9 @@ section .h4 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+section .project {
+  transition: transform 900ms ease-in-out;
+}
 section .project p,
 section .project ul,
 section .project ol {
@@ -58215,6 +58218,9 @@ section .project .h4 {
 }
 section .project .tags {
   height: 50px;
+}
+section .project:hover {
+  transform: scale(1.1);
 }
 
 .components-circular-option-picker__option {

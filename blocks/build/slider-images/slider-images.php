@@ -20,11 +20,11 @@ class SliderImages {
     /**
 	 * Constructor
 	 */
-	public function init() {
+	public static function init() {
 		add_action( 'init', array( get_called_class(), 'registrer' ) );
 	}
 
-    public function registrer()
+    public static function registrer()
     {
         register_block_type(
             get_theme_file_path('blocks/build/slider-images'),

@@ -20,11 +20,11 @@ class AboutBlock {
     /**
 	 * Constructor
 	 */
-	public function init() {
+	public static function init() {
 		add_action( 'init', array( get_called_class(), 'registrer' ) );
 	}
 
-    public function registrer()
+    public static function registrer()
     {
         register_block_type(
             get_theme_file_path('blocks/build/about-block'),
@@ -42,7 +42,7 @@ class AboutBlock {
             ));
     }
 
-    public function renderBlock($attributes, $content, $block) {
+    public static function renderBlock($attributes, $content, $block) {
         ob_start();
         require_once get_theme_file_path('blocks/build/about-block/render.php');
         return ob_get_clean();

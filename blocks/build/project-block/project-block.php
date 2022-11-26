@@ -25,7 +25,7 @@ class ProjectsBlock {
         require __DIR__.'/headerimage.php';
     }
     
-	public function init() {
+	public static function init() {
         add_action( 'init', array( get_called_class(), 'registrer' ) );
         add_action( 'init', array( get_called_class(), 'projectsPosts' ), 0 );
         add_action( 'init', array( get_called_class(), 'projectsTaxonomy' ), 0 );
@@ -36,7 +36,7 @@ class ProjectsBlock {
 	}
 
     
-    public function registrer()
+    public static function registrer()
     {
         register_block_type(
             get_theme_file_path('blocks/build/project-block'),
@@ -61,7 +61,7 @@ class ProjectsBlock {
     }
     
     // Register Custom Post Type
-    public function projectsPosts() {
+    public static function projectsPosts() {
         
         $labels = array(
             'name'                  => _x( 'Projects', 'Post Type General Name', 'understrap' ),
@@ -115,7 +115,7 @@ class ProjectsBlock {
         }
         
             // Register Custom Taxonomy
-            public function projectsTaxonomy() {
+            public static function projectsTaxonomy() {
             
                 $labels = array(
                     'name'                       => _x( 'Categories', 'Taxonomy General Name', 'understrap' ),
@@ -154,7 +154,7 @@ class ProjectsBlock {
             }
 
             // Register Custom Taxonomy
-        public function technology_tags() 
+        public static function technology_tags() 
         {
 
             $labels = array(
@@ -193,7 +193,7 @@ class ProjectsBlock {
 
         }
             
-            public function get_custom_post_type_template( $template ) {
+            public static function get_custom_post_type_template( $template ) {
                 global $post;
             
                 if ( 'post_projects' === $post->post_type ) {
@@ -216,7 +216,7 @@ class ProjectsBlock {
                 echo $outHTML;
             }
 
-            public function projects_excerpt_more( $more ) 
+            public static function projects_excerpt_more( $more ) 
             {
                 return sprintf( '...</p><p class="read-more"> <a href="%1$s" class="btn btn-outline-primary">%2$s</a>',
                       esc_url( get_permalink( get_the_ID() ) ),

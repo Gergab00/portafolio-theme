@@ -96,6 +96,8 @@ section {
   }
 
   .project {
+
+    transition: transform 900ms ease-in-out;
     p,
     ul,
     ol {
@@ -115,6 +117,11 @@ section {
     .tags {
       height: 50px;
     }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
   }
 }
 
