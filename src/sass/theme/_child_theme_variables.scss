@@ -162,7 +162,8 @@ $m: 0;
 // scss-docs-start position-map
 $position: 1%;
 $position-values: (
-    try: $position * 1
+    try: $position * 1,
+    50: $position * 50,
 );
 
 $n: 0;

@@ -26,12 +26,12 @@ $title = explode(" ", $title);
     }
 </style>
 <section
-    <?php echo get_block_wrapper_attributes(['class' => 'container-fluid d-flex flex-column justify-content-start align-items-center px-0 mx-auto overflow-hidden vh-100 position-relative']); ?>
+    <?php echo get_block_wrapper_attributes(['class' => 'container-fluid px-0 overflow-hidden vh-100 position-relative']); ?>
     data-block="home-header">
 
-    <div class="row card-img-overlay bg-dark bg-opacity-50 overflow-hidden w-auto">
-        <div class="row align-items-center justify-content-between w-100 h-md-100 mh-100 p-0">
-            <div class="col-md-4 mx-auto ps-48 text-center">
+    <div class="row card-img-overlay bg-dark bg-opacity-50 d-flex align-items-center justify-content-center p-0 m-0 top-50 start-50 translate-middle w-100 h-100">
+        <div class="row align-items-center h-100 px-0">
+            <div class="col-md-4 mx-auto ps-md-48 text-center">
     
                 <h1 class="display-1 text-light">
                     <span class="fw-bold"><?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?></span> <span class="text-light"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
