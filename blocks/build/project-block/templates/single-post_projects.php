@@ -43,6 +43,10 @@ if (have_posts()):
             max-height: 650px;
             height: 650px;
         }
+
+        @media (min-width: 577px){
+            height: 400px;
+        }
     </style>
     <header class="bg-image container-fluid position-relative p-0">
         <div class="row card-img-overlay bg-dark bg-opacity-50 overflow-hidden">
@@ -50,7 +54,7 @@ if (have_posts()):
     </header>
     <article class="container-fluid mw-1200 bg-light w-100 mt-n160 py-32 px-16 rounded border-radius-10 position-relative">
         <div class="row justify-content-center">
-            <?php the_post_thumbnail( 'large', array( 'class' => 'mw-640 mt-n100 mb-16 p-0 shadow-regular rounded border-radius-10') ); ?>
+            <?php the_post_thumbnail( 'large', array( 'class' => 'mw-640 mh-480 mt-n100 mb-16 p-0 shadow-regular rounded border-radius-10') ); ?>
             <?php
                 if ( function_exists('yoast_breadcrumb') ) {
                     yoast_breadcrumb( '<div class="breadcrumb d-flex justify-content-center text-primary">','</div>' );

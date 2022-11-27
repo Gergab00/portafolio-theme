@@ -10210,12 +10210,16 @@ textarea.form-control-lg {
   max-width: 100% !important;
 }
 
-.mw-1200 {
-  max-width: 1200px !important;
+.mw-480 {
+  max-width: 480px !important;
 }
 
 .mw-640 {
   max-width: 640px !important;
+}
+
+.mw-1200 {
+  max-width: 1200px !important;
 }
 
 .vw-100 {
@@ -10274,12 +10278,16 @@ textarea.form-control-lg {
   max-height: 100% !important;
 }
 
-.mh-1200 {
-  max-height: 1200px !important;
+.mh-480 {
+  max-height: 480px !important;
 }
 
 .mh-640 {
   max-height: 640px !important;
+}
+
+.mh-1200 {
+  max-height: 1200px !important;
 }
 
 .vh-100 {
@@ -56508,6 +56516,15 @@ section .project .h3,
 section .project h4,
 section .project .h4 {
   height: 75px;
+}
+@media (max-width: 576.98px) {
+  section .project h2, section .project .h2,
+  section .project h3,
+  section .project .h3,
+  section .project h4,
+  section .project .h4 {
+    height: 50px;
+  }
 }
 section .project .tags {
   height: 50px;
