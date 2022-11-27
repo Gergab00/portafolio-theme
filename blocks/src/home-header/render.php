@@ -22,8 +22,7 @@ $title = explode(" ", $title);
     background-position: center center;
     background-size: 1920px auto;
     background-color: rgba(0, 0, 0);
-    max-height: 650px;
-    height: 650px;
+    min-height: 1024px;
     }
 </style>
 <section
@@ -37,12 +36,12 @@ $title = explode(" ", $title);
                 <h1 class="display-1 text-light">
                     <span class="fw-bold"><?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?></span> <span class="text-light"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
                 <a href="#" class="btn btn-primary fs-32 w-xxl-40 my-16"><?php _e($text_btn, 'understrap'); ?></a>
-                <div class="text-white fs-24 rounded border-radius-10 p-16 bg-white bg-opacity-25 backdrop-filter-blur-10">
+                <div class="text-white fs-24 rounded border-radius-10 p-16 my-16 bg-white bg-opacity-25 backdrop-filter-blur-10">
                     <?php _e($content, 'understrap'); ?>
                 </div>
             </div>
             <!-- in mobile remove the clippath -->
-            <div class="col-md-8 h-100 clipped-md-parallelogram"
+            <div class="col-md-8 h-100 clipped-md-parallelogram my-md-0 my-16"
                 style="min-height: 350px; background-image: url(<?php echo wp_get_attachment_image_url( $media['id'], 'full', false );  ?>); background-position: top center; background-size: cover;">
     
             </div>

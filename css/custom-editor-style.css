@@ -57958,6 +57958,16 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+.site {
+  padding: 0;
+}
+@media (max-width: 821.98px) {
+  .site {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

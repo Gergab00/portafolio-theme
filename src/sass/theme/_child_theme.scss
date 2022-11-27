@@ -1,6 +1,15 @@
 //Add your styles into this file
 @use "sass:selector";
 
+.site {
+	padding: 0;
+
+	@include media-breakpoint-down(md) {
+		position: relative;
+		overflow: hidden;
+	}
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
