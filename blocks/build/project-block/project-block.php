@@ -56,7 +56,7 @@ class ProjectsBlock {
     
     public function renderBlock($attributes, $content, $block) {
         ob_start();
-        require_once get_theme_file_path('blocks/build/project-block/render.php');
+        require get_theme_file_path('blocks/build/project-block/render.php');
         return ob_get_clean();
     }
     
