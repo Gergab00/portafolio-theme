@@ -54,7 +54,7 @@ class Newsletter {
     }
 
     // Register Custom Post Type
-function registrerContactsPostType() {
+public static function registrerContactsPostType() {
 
 	$labels = array(
 		'name'                  => _x( 'Contacts', 'Post Type General Name', 'understrap' ),
