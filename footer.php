@@ -17,11 +17,9 @@ defined( 'ABSPATH' ) || exit;
 
 $container 	= get_option( '_container' );
 $phone		= get_option( '_phone_number' );
-$mail		= get_option( '_mail', 'contacto@gerardogonzalez.dev');
+$mail		= get_option( '_mail', 'contact@gerardo-gonzalez.dev');
 $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
 ?>
-
-<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 <footer class="wrapper" id="wrapper-footer">
 
@@ -124,19 +122,9 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
 							?>
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <h3 class="fs-34 py-8">
-                        <span class="text-light">.</span> <span
-                            class="text-light text-lowercase">suscribe</span>
-                    </h3>
-                    <label for="email" class="form-label fs-20 text-light py-8">
-                        Sign up to me newsletter
-                    </label>
-                    <div class="input-group py-8">
-                        <input type="text" class="form-control" id="email" placeholder="Write your email"
-                            aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-light" type="button" id="button-addon2"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-
+                    <?php if ( is_active_sidebar( 'footerfull' ) ) : ?>
+                        <?php dynamic_sidebar( 'footerfull' ); ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row text-light mw-1200 w-100 justify-content-center py-31 my-64">

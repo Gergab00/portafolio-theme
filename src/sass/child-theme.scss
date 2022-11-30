@@ -40,7 +40,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "assets/bootstrap5/breadcrumb";
 @import "assets/bootstrap5/pagination";
 //@import "assets/bootstrap5/badge";
-//@import "assets/bootstrap5/alert";
+@import "assets/bootstrap5/alert";
 //@import "assets/bootstrap5/progress";
 @import "assets/bootstrap5/list-group";
 @import "assets/bootstrap5/close";
