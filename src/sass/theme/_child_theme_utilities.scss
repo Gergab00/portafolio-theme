@@ -111,6 +111,13 @@ $utilities: map-merge(
 				24: 1.5rem,
 			),
 		),
+    "background-blend-mode": (
+			property: background-blend-mode,
+			class: bg-blend,
+			values: (
+				'soft-light': soft-light,
+			),
+		),
     // scss-docs-end utils-bg-color
     "gradient": (
       property: background-image,
