@@ -26,65 +26,65 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
     <div
         class="<?php echo esc_attr( $container ); ?> bg-primary py-32 d-flex flex-wrap justify-content-center align-items-center">
 
-            <div class="row mw-1200 w-100 text-light p-16 justify-content-center">
+            <div class="row mw-1200 w-100 text-white p-16 justify-content-center">
                 <div class="col-md-4 col-sm-6 order-md-1 order-2 mt-md-0 mt-16 text-center">
                     <p>
                         <span class="rounded-circle border border-3 border-light p-8 m-8">
-                            <i class="fa-solid fa-phone fs-20 text-light"></i>
+                            <i class="fa-solid fa-phone fs-20 text-white"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light fs-20">
+                        <span class="text-white fs-20">
                             < </span>
                                 <a href="tel:+52<?php _e($phone, 'understrap'); ?>"
-                                    class="text-light fs-20 text-decoration-none">
+                                    class="text-white fs-20 text-decoration-none">
                                     <?php _e($phone, 'understrap'); ?>
                                 </a>
-                                <span class="text-light fs-20"> /> </span>
+                                <span class="text-white fs-20"> /> </span>
                     </p>
                 </div>
                 <div class="col-md-4 col-sm-12 order-md-2 order-1 mt-md-0 mt-16 text-center">
                     <p>
                         <span class="rounded-circle border border-3 border-light p-8">
-                            <i class="fa-solid fa-envelope fs-20 text-light"></i>
+                            <i class="fa-solid fa-envelope fs-20 text-white"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light fs-20">
+                        <span class="text-white fs-20">
                             < </span>
                                 <a href="mailto:<?php _e($mail, 'understrap'); ?>"
-                                    class="text-light fs-20 text-decoration-none">
+                                    class="text-white fs-20 text-decoration-none">
                                     <?php _e($mail, 'understrap'); ?>
                                 </a>
-                                <span class="text-light fs-20"> /> </span>
+                                <span class="text-white fs-20"> /> </span>
                     </p>
 
                 </div>
                 <div class="col-md-4 col-sm-6 order-3 mt-md-0 mt-16 text-center">
                     <p>
                         <span class="rounded-circle border border-3 border-light p-8">
-                            <i class="fa-brands fa-facebook-messenger fs-20 text-light"></i>
+                            <i class="fa-brands fa-facebook-messenger fs-20 text-white"></i>
                         </span>
                     </p>
                     <p>
-                        <span class="text-light fs-20">
+                        <span class="text-white fs-20">
                             < </span>
                                 <a href="<?php _e($messenger, 'understrap'); ?>"
-                                    class="text-light fs-20 text-decoration-none">
+                                    class="text-white fs-20 text-decoration-none">
                                     <?php _e(str_replace('https://m.me/','@',$messenger), 'understrap'); ?>
                                 </a>
-                                <span class="text-light fs-20"> /> </span>
+                                <span class="text-white fs-20"> /> </span>
                     </p>
                 </div>
             </div>
             <div class="row mw-1200 w-100">
                 <hr class="border boder-light opacity-100">
             </div>
-            <div class="row text-light mw-1200 w-100">
+            <div class="row text-white mw-1200 w-100">
                 <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
-                        <span class="text-light">.</span> <span
-                            class="text-light text-lowercase">About</span>
+                        <span class="text-white">.</span> <span
+                            class="text-white text-lowercase">About</span>
                     </h3>
                     <?php
 							wp_nav_menu(
@@ -103,8 +103,8 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <h3 class="fs-34">
-                        <span class="text-light">.</span> <span
-                            class="text-light text-lowercase">Resources</span>
+                        <span class="text-white">.</span> <span
+                            class="text-white text-lowercase">Resources</span>
                     </h3>
                     <?php
 							wp_nav_menu(
@@ -127,7 +127,7 @@ $messenger	= get_option( '_messenger', 'https://m.me/GerardoGonzalezDev' )
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="row text-light mw-1200 w-100 justify-content-center py-31 my-64">
+            <div class="row text-white mw-1200 w-100 justify-content-center py-31 my-64">
                 <?php get_social_icons(); ?>
             </div>
         </div>

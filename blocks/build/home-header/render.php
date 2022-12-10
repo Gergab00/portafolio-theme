@@ -33,8 +33,8 @@ $title = explode(" ", $title);
         <div class="row align-items-center h-100 px-0">
             <div class="col-md-4 mx-auto ps-md-48 text-center">
     
-                <h1 class="display-1 text-light">
-                    <span class="fw-bold"><?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?></span> <span class="text-light"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
+                <h1 class="display-1 text-white">
+                    <span class="fw-bold"><?php _e(array_slice($title, 0, intdiv(sizeof($title),2))[0], 'understrap'); ?></span> <span class="text-white"><?php _e(array_slice($title, intdiv(sizeof($title),2))[0], 'understrap'); ?></span></h1>
                 <a href="<?php echo esc_url( get_permalink($post['id']) ); ?>" class="btn btn-primary fs-32 w-xxl-40 my-16"><?php _e($text_btn, 'understrap'); ?></a>
                 <div class="text-white fs-24 rounded border-radius-10 p-16 my-16 bg-white bg-opacity-25 backdrop-filter-blur-10">
                     <?php _e($content, 'understrap'); ?>

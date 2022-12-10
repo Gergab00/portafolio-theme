@@ -46,18 +46,18 @@ $phone		= get_option( '_phone_number' );
                 <div class="<?php echo esc_attr( $container ); ?> justify-content-center">
 
                     <div class="row w-100 mw-1200 align-items-center">
-                        <div class="col-sm-6 text-sm-start text-center text-light">
+                        <div class="col-sm-6 text-sm-start text-center text-white">
                             <!-- Your site title as branding in the menu -->
                             <?php if ( ! has_custom_logo() ) { ?>
 
                             <?php if ( is_front_page() && is_home() ) : ?>
 
-                            <h1 class="navbar-brand mb-0 text-light"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                            <h1 class="navbar-brand mb-0 text-white"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                     itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
 
                             <?php else : ?>
 
-                            <a class="navbar-brand text-light" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                            <a class="navbar-brand text-white" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                 itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
                             <?php endif; ?>
@@ -70,23 +70,23 @@ $phone		= get_option( '_phone_number' );
                             <!-- end custom logo -->
                         </div>
                         <div class="col-md-3 col-sm-5 text-center">
-                            <span class="text-light fs-20">
+                            <span class="text-white fs-20">
                                 < </span>
-                                    <span class="text-light fs-20">
+                                    <span class="text-white fs-20">
                                         Call me:
                                     </span>
                                     <a href="tel:+52<?php _e($phone, 'understrap'); ?>"
-                                        class="text-light fs-20 text-decoration-none">
+                                        class="text-white fs-20 text-decoration-none">
                                         <?php _e($phone, 'understrap'); ?>
                                     </a>
-                                    <span class="text-light fs-20"> /> </span>
+                                    <span class="text-white fs-20"> /> </span>
                         </div>
                         <div class="col-md-3 col-sm-1 text-sm-end text-center">
                             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas"
                                 aria-expanded="false"
                                 aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-                                <i class="fa-solid fa-bars fs-32 text-light"></i>
+                                <i class="fa-solid fa-bars fs-32 text-white"></i>
                             </button>
 
                             <div class="offcanvas offcanvas-end bg-transparent backdrop-filter-5" tabindex="-1"
@@ -101,13 +101,13 @@ $phone		= get_option( '_phone_number' );
 
                                         <?php if ( is_front_page() && is_home() ) : ?>
 
-                                        <h1 class="navbar-brand text-light mb-0"><a rel="home"
+                                        <h1 class="navbar-brand text-white mb-0"><a rel="home"
                                                 href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                                 itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
 
                                         <?php else : ?>
 
-                                        <a class="navbar-brand text-light" rel="home"
+                                        <a class="navbar-brand text-white" rel="home"
                                             href="<?php echo esc_url( home_url( '/' ) ); ?>"
                                             itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
@@ -126,7 +126,7 @@ $phone		= get_option( '_phone_number' );
                                             <button type="button"
                                                 class="btn-close bg-transparent mt-md-100 mt-sm-50 mt-25 mx-auto"
                                                 data-bs-dismiss="offcanvas" aria-label="Close">
-                                                <i class="fa-solid fa-xmark text-light fs-34"></i>
+                                                <i class="fa-solid fa-xmark text-white fs-34"></i>
                                             </button>
                                         </div><!-- .offcanvas-header -->
                                         <!-- The WordPress Menu goes here -->

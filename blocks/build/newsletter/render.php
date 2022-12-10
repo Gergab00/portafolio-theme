@@ -17,10 +17,10 @@ extract( $attributes );
 
 <form <?php echo get_block_wrapper_attributes(['class' => 'row needs-validation']); ?> id="newsletter" action="" novalidate data-block="newsletter">
 	<h3 class="fs-34 py-8">
-		<span class="text-light">.</span> <span
-			class="text-light text-lowercase">suscribe</span>
+		<span class="text-white">.</span> <span
+			class="text-white text-lowercase">suscribe</span>
 	</h3>
-	<label for="email" class="form-label fs-20 text-light py-8">
+	<label for="email" class="form-label fs-20 text-white py-8">
 		I want to know the last news for Wordpress World
 	</label>
 	<div class="input-group py-8">

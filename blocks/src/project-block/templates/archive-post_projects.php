@@ -24,7 +24,7 @@ $move = 0;
 
 <main class="<?php echo esc_attr($container); ?> d-flex flex-column align-items-center" id="archive-projects">
 <div class="row mw-1200 justify-content-center w-100 py-16">
-    <?php the_archive_title('<h1 class="text-center text-dark">', '</h1>'); ?>
+    <?php the_archive_title('<h1 class="text-center text-black">', '</h1>'); ?>
 </div>
 <section class="row mw-1200 w-100 pt-16 pb-32">
 <?php   
@@ -32,9 +32,9 @@ if (have_posts()):
     while (have_posts()):
         the_post();
         $colors = array(
-            array('bg-white','text-dark','bg-secondary'),
-            array('bg-info','text-light','bg-primary'),
-            array('bg-dark','text-light','bg-primary'),
+            array('bg-white','text-black','bg-secondary'),
+            array('bg-info','text-white','bg-primary'),
+            array('bg-dark','text-white','bg-primary'),
         );
         $mod = ($wp_query->current_post + $move) % 3;
         if(($wp_query->current_post % 3) === 2) $move++;

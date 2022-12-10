@@ -211,7 +211,7 @@ class ProjectsBlock {
                 $outHTML = '';
                 if($terms):
                     foreach ( $terms as $tax ) {
-                        $outHTML .= '<span class="me-16 fs-12 text-muted">' . __( $tax->name ) . '</span>';
+                        $outHTML .= '<span class="me-16 fs-12 ">' . __( $tax->name ) . '</span>';
                     }
                 endif;
                 echo $outHTML;
@@ -219,7 +219,7 @@ class ProjectsBlock {
 
             public static function projects_excerpt_more( $more ) 
             {
-                return sprintf( '...</p><p class="read-more"> <a href="%1$s" class="btn btn-outline-primary">%2$s</a>',
+                return sprintf( '...</p><p class="read-more"> <a href="%1$s" class="btn btn-primary">%2$s</a>',
                       esc_url( get_permalink( get_the_ID() ) ),
                       sprintf( __( 'Continue reading %s', 'wpdocs' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
                 );

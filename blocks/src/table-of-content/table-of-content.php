@@ -79,7 +79,7 @@ class TableOfContent {
 		$content = self::add_ids_and_jumpto_links( 'h4', $content );
 
 		if ( $items ) {
-			$toc .= '<div class="card bg-primary text-light shadow-regular">';
+			$toc .= '<div class="card bg-primary text-white shadow-regular">';
 			$toc .= '<h3 class="mx-16" id="content"><i class="fa-solid fa-table-list"></i> Contents</h3>';
             $toc .= '<ul class="list-group list-group-flush">';
 			foreach ( $items as $item ) {

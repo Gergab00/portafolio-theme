@@ -24,7 +24,7 @@ const ALLOWED_BLOCKS = [
 const TEMPLATE = [
 	[
 		'core/columns',
-		{ className: 'row w-100' },
+		{ className: 'row w-100 mw-1200 bg-transparent backdrop-filter-3 rounded border-radius-10' },
 		[
 			[
 				'core/column',
@@ -34,7 +34,7 @@ const TEMPLATE = [
 						'core/heading',
 						{
 							level: 2,
-							className: 'fs-54 text-light',
+							className: 'fs-54 text-white',
 							placeholder: 'Enter your Title...',
 							content: 'About Me',
 						},
@@ -43,7 +43,7 @@ const TEMPLATE = [
 			],
 			[
 				'core/column',
-				{ className: 'col-sm-8 text-light' },
+				{ className: 'col-sm-8 text-white' },
 				[ [ 'core/paragraph', {} ] ],
 			],
 		],

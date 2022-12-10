@@ -60,12 +60,12 @@ if (have_posts()):
                     yoast_breadcrumb( '<div class="breadcrumb d-flex justify-content-center text-primary">','</div>' );
                 }
             ?>
-            <?php the_title( '<h1 class="text-uppercase text-center text-dark my-16">', '</h1>' ); ?>
+            <?php the_title( '<h1 class="text-uppercase text-center text-black my-16">', '</h1>' ); ?>
             <div class="col-12 d-flex justify-content-center my-16">
                 <a class="btn btn-primary mx-16" href="<?php echo $btnURLRepositorie ?>" role="button" target="_blank"><?php echo $btnTextRepositorie; ?></a>
                 <a class="btn btn-secondary mx-16" href="<?php echo $btnURLDemo; ?>" role="button" target="_blank"><?php echo $btnTextDemo; ?></a>
             </div>
-            <section class="col-12 p-32 mw-640 text-dark">
+            <section class="col-12 p-32 mw-640 text-black">
                 <?php the_content(); ?>
             </section>
         </div>

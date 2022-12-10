@@ -27,7 +27,7 @@ $move = 0;
 
 <section <?php echo get_block_wrapper_attributes(['class' => 'container-fluid d-flex flex-column align-items-center']); ?> data-block="project-block">
 <div class="row mw-1200 justify-content-center w-100 py-16">
-    <h2 class="text-center text-dark"><?php echo $title; ?></h1>
+    <h2 class="text-center text-black"><?php echo $title; ?></h1>
 </div>
 <div class="row mw-1200 w-100 pt-16 pb-32">
 <?php   
@@ -35,9 +35,9 @@ if ($query->have_posts()):
     while ($query->have_posts()):
         $query->the_post();
         $colors = array(
-            array('bg-white','text-dark','bg-secondary'),
-            array('bg-info','text-light','bg-primary'),
-            array('bg-dark','text-light','bg-primary'),
+            array('bg-white','text-black','bg-secondary'),
+            array('bg-info','text-white','bg-primary'),
+            array('bg-dark','text-white','bg-primary'),
         );
         $mod = ($query->current_post + $move) % 3;
         if($query->current_post % 3 === 2) $move++;

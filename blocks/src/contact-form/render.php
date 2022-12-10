@@ -19,7 +19,7 @@ extract( $attributes );
 
 <div class="row mw-1200 w-100 my-64">
 	<div class="col-sm-6 d-flex flex-column align-items-center justify-content-center bg-primary bg-pattern-jupiter bg-blend-soft-light rounded-start border-radius-10">
-		<?php the_title( '<h1 class="text-dark">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="text-black">', '</h1>' ); ?>
 	</div>
 	<div class="col-sm-6 bg-light rounded-end border-radius-10 p-64">
 		<form id="contact_form" action="">
