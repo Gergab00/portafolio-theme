@@ -22,7 +22,7 @@ extract( $attributes );
 		<?php the_title( '<h1 class="text-dark">', '</h1>' ); ?>
 	</div>
 	<div class="col-sm-6 bg-light rounded-end border-radius-10 p-64">
-		<form id="contact" action="">
+		<form id="contact_form" action="">
 			<div class="form-floating my-16">
 				<label for="name" class="form-label">Name:</label>
 				<input type="text" class="form-control" name="name" id="name" required>
@@ -43,7 +43,7 @@ extract( $attributes );
 			<div class="frm-message alert d-none my-16" role="alert">
   				A simple dark alert—check it out!
 			</div>
-	
+
 			<input id="submit" class="btn btn-primary btn-lg my-16" type="submit" name="submit" value="Contact Me">
 		</form>
 	</div>

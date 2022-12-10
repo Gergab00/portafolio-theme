@@ -11,8 +11,11 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
-import { Panel, PanelBody, PanelRow } from '@wordpress/components';
+import { Panel, PanelBody, PanelRow, TextControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
+import { useEntityProp } from '@wordpress/core-data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -35,12 +38,28 @@ export default function Edit({attributes, setAttributes}) {
 	const bodyTitle = 'My Block Settings';
 	const opened = true;
 
+	const postType = useSelect(
+		( select ) => select( 'core/editor' ).getCurrentPostType(),
+		[]
+	);
+
+	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
+
+	const metaFieldValue = meta[ '_emailSendto' ];
+	const updateMetaValue = ( newValue ) => {
+		setMeta( { ...meta, _emailSendto: newValue } );
+	};
+
 	return (
 		<div { ...useBlockProps() }>
 			<Panel header="Contact Form">
 				<PanelBody title={ bodyTitle } opened={ opened }>
 					<PanelRow>
-						{ __( 'Contact Form – hello from the editor!', 'portafolio-theme' ) }
+						<TextControl
+							label="Email to sent."
+							value={ metaFieldValue }
+							onChange={ updateMetaValue }
+						/>
 					</PanelRow>
 				</PanelBody>
 			</Panel>
