@@ -71,7 +71,7 @@ class ContactForm {
         ) );
     }
 
-    function restRouteCallback( $data ) {
+    public static function restRouteCallback( $data ) {
         $response = admin_url( 'admin-ajax.php' );
 
         $name = sanitize_file_name( $data['name'] );
