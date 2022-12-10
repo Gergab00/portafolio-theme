@@ -20,7 +20,7 @@ class ContactForm {
     /**
 	 * Constructor
 	 */
-	public function init() {
+	public static function init() {
 		add_action( 'init', array( get_called_class(), 'registrer' ) );
         add_action( 'wp_enqueue_scripts', array( get_called_class(),'enqueueScripts'));
         add_action( 'wp_ajax_nopriv_contact_form', array( get_called_class(), 'contactFormSend') );
@@ -29,7 +29,7 @@ class ContactForm {
         add_action( 'rest_api_init', array( get_called_class(), 'registerRoutes'));
 	}
 
-    public function registrer()
+    public static function registrer()
     {
         register_block_type(
             get_theme_file_path('blocks/build/contact-form'),
