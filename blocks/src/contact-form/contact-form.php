@@ -72,20 +72,19 @@ class ContactForm {
     }
 
     public static function restRouteCallback( $data ) {
-        $response = admin_url( 'admin-ajax.php' );
 
         $name = sanitize_file_name( $data['name'] );
         $email = sanitize_email($data['email']);
         $message = sanitize_textarea_field( $data['message'] );
 
         $to = 'gerardo.gv.dev@gmail.com';
-        $subject = 'The subject';
-        $body = 'The email body content: ' . $message;
-        $headers = array('Content-Type: text/html; charset=UTF-8','From: My Site Name <support@example.com>');
+        $subject = 'Message from: '.$name.'<'.$email.'>';
+        $body = 'Message from: '.$name.'<'.$email.'>\n'.'The email body content: ' . $message;
+        $headers = array('Content-Type: text/html; charset=UTF-8','From: Contact Form <contact@gerardo-gonzalez.dev>');
 
         $sentSuccessfully = wp_mail( $to, $subject, $body, $headers );
 
-        $res = sentSuccessfully ? [ 'status' => 1, 'message' => 'Your message was send...', 'data'=> $data ]
+        $res = $sentSuccessfully ? [ 'status' => 1, 'message' => 'Your message was send...', 'data'=> $data ]
 		:[ 'status' => 0, 'message' => 'Opps we make a b0o b0o' ];
 
         return new WP_REST_Response($res, 200);
