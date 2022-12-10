@@ -89,7 +89,7 @@ $phone		= get_option( '_phone_number' );
                                 <i class="fa-solid fa-bars fs-32 text-light"></i>
                             </button>
 
-                            <div class="offcanvas offcanvas-end bg-primary backdrop-filter-5" tabindex="-1"
+                            <div class="offcanvas offcanvas-end bg-transparent backdrop-filter-5" tabindex="-1"
                                 id="navbarNavOffcanvas">
 
 
